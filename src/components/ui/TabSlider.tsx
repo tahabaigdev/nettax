@@ -9,9 +9,9 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./button";
 import featureImg01 from "/images/feature-img-01.png";
-import featureImg02 from "/images/feature-img-01.png";
-import featureImg03 from "/images/feature-img-01.png";
-import featureImg04 from "/images/feature-img-01.png";
+import featureImg02 from "/images/feature-img-02.png";
+import featureImg03 from "/images/feature-img-03.png";
+import featureImg04 from "/images/feature-img-04.png";
 
 interface Feature {
   label: string;
@@ -145,9 +145,9 @@ const TabSlider = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="flex flex-col items-start gap-[3.2rem] xl:flex-row xl:items-center"
+          className="flex flex-col items-center gap-[3.2rem] xl:flex-row"
         >
-          <div className="flex w-full max-w-[60rem] flex-col justify-center xl:max-w-[46.8rem]">
+          <div className="flex w-full max-w-[60rem] flex-col items-center justify-center text-center xl:max-w-[46.8rem] xl:items-start xl:text-left">
             <div className="relative">
               <h3 className="ibm-font mb-[2.4rem] text-[3rem] leading-[4rem] font-medium tracking-[-2px] text-(--base-color-01) capitalize md:text-[5rem] md:leading-[6rem]">
                 {heroSlides[selectedIndex].heading}
@@ -159,7 +159,7 @@ const TabSlider = () => {
             </p>
 
             <div className="flex flex-col items-start gap-[1rem] md:flex-row md:items-center md:gap-[2rem]">
-              <Button asChild className="w-[100%]">
+              <Button asChild className="w-[100%] min-w-max">
                 <a href="/">
                   <span>Get Free Consultation</span>
 
@@ -177,12 +177,14 @@ const TabSlider = () => {
             </div>
           </div>
 
-          <div className="flex size-full justify-center overflow-hidden rounded-[2.4rem]">
-            <img
-              src={heroSlides[selectedIndex].img}
-              className="object-contain object-top"
-              alt="Image"
-            />
+          <div className="flex justify-end">
+            <div className="h-[40rem] max-w-[70rem]">
+              <img
+                src={heroSlides[selectedIndex].img}
+                className="size-full object-center"
+                alt="Image"
+              />
+            </div>
           </div>
         </motion.div>
       </AnimatePresence>

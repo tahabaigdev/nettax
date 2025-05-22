@@ -26,8 +26,8 @@ const FeatureSection = () => {
       viewport={{ once: true, amount: 0.2 }}
       className="relative z-[1] bg-[#EEF8FF] px-[2rem] py-[5rem] lg:py-[7.2rem] xl:px-[0rem]"
     >
-      <div className="absolute top-[1rem] left-[5rem] z-[-1] md:top-[30rem]">
-        <BookCheck className="size-[4rem] rotate-45 stroke-[1.5px] text-(--primary-color)" />
+      <div className="absolute top-[1rem] z-[-1] xl:top-[30rem] xl:left-[5rem]">
+        <BookCheck className="size-[3rem] rotate-45 stroke-[1.5px] text-(--primary-color) xl:size-[4rem]" />
       </div>
 
       <div className="absolute right-[5rem] bottom-[10rem] z-[-1]">

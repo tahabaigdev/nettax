@@ -7,11 +7,10 @@ import {
 } from "@/components/ui/accordion";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import aboutSectionBg from "/images/about-section-bg.avif";
+import aboutSectionBg from "/images/hero-bg.avif";
 import netTaxGuruImg01 from "/images/nettax-guru-img-01.png";
 import netTaxGuruImg02 from "/images/nettax-guru-img-02.png";
 import netTaxGuruImg03 from "/images/nettax-guru-img-03.png";
-import heart01 from "/images/heart-01.svg";
 import circle01 from "/images/circle-01.svg";
 
 const imagesMap: Record<string, React.ReactNode> = {
@@ -21,22 +20,14 @@ const imagesMap: Record<string, React.ReactNode> = {
         <img
           src={aboutSectionBg}
           alt="About Section Bg"
-          className="object-cover object-center"
+          className="size-full object-contain object-center"
         />
 
-        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[76%] translate-[-50%]">
+        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
           <img
             src={netTaxGuruImg01}
             alt="About Section Bg"
             className="object-cover object-center"
-          />
-        </div>
-
-        <div className="aspect-[1.1 / 1] absolute top-[1rem] left-[1rem] w-[12%]">
-          <img
-            src={heart01}
-            alt="About Section Bg"
-            className="object-contain object-center"
           />
         </div>
 
@@ -56,24 +47,14 @@ const imagesMap: Record<string, React.ReactNode> = {
         <img
           src={aboutSectionBg}
           alt="About Section Bg"
-          className="object-cover object-center"
-          width={755}
-          height={1024}
+          className="size-full object-contain object-center"
         />
 
-        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[76%] translate-[-50%]">
+        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
           <img
             src={netTaxGuruImg02}
             alt="About Section Bg"
             className="object-cover object-center"
-          />
-        </div>
-
-        <div className="aspect-[1.1 / 1] absolute top-[1rem] left-[1rem] w-[12%]">
-          <img
-            src={heart01}
-            alt="About Section Bg"
-            className="object-contain object-center"
           />
         </div>
 
@@ -93,24 +74,14 @@ const imagesMap: Record<string, React.ReactNode> = {
         <img
           src={aboutSectionBg}
           alt="About Section Bg"
-          className="object-cover object-center"
-          width={755}
-          height={1024}
+          className="size-full object-contain object-center"
         />
 
-        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[76%] translate-[-50%]">
+        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
           <img
             src={netTaxGuruImg03}
             alt="About Section Bg"
             className="object-cover object-center"
-          />
-        </div>
-
-        <div className="aspect-[1.1 / 1] absolute top-[1rem] left-[1rem] w-[12%]">
-          <img
-            src={heart01}
-            alt="About Section Bg"
-            className="object-contain object-center"
           />
         </div>
 

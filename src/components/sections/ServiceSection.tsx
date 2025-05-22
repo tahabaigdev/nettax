@@ -73,7 +73,7 @@ const ServiceSection = () => {
                 />
               </div>
 
-              <div className="absolute top-[-2rem] left-[2rem] z-[-1] w-[25%] rotate-12">
+              <div className="absolute top-[0rem] left-[2rem] z-[-1] w-[20%] rotate-12 md:top-[-1rem] lg:w-[25%] xl:top-[-2rem]">
                 <img
                   src={highlighter}
                   alt="Image"

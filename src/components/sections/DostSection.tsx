@@ -47,7 +47,7 @@ const DostSection = () => {
         <ChartLine className="size-[4rem] text-(--primary-color)" />
       </div>
 
-      <div className="absolute top-[40rem] right-[10rem] rotate-12">
+      <div className="absolute top-[40rem] right-[2rem] rotate-12 md:right-[10rem]">
         <ChartNoAxesCombined className="size-[4rem] text-(--primary-color)" />
       </div>
 

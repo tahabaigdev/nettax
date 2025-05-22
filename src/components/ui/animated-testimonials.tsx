@@ -146,19 +146,19 @@ export const AnimatedTestimonials = ({
             }}
             className="flex flex-col items-center text-center lg:items-start lg:text-left"
           >
-            <div className="relative">
-              <h6 className="ibm-font mb-[3rem] max-w-[70rem] text-[3.5rem] leading-[4.5rem] font-medium tracking-[-2px] text-(--base-color-01) md:text-[6rem] md:leading-[6rem]">
-                Meet Our Team
-              </h6>
-
-              <div className="absolute top-[0rem] left-[0rem] w-[35%]">
-                <img
-                  src={yellowHighlight03}
-                  alt="Image"
-                  className="object-contain object-center"
-                />
-              </div>
-            </div>
+            <h6 className="ibm-font mb-[3rem] max-w-[70rem] text-[3.5rem] leading-[4.5rem] font-medium tracking-[-2px] text-(--base-color-01) md:text-[6rem] md:leading-[6rem]">
+              Meet Our{" "}
+              <span className="relative">
+                Team{" "}
+                <div className="absolute bottom-[0rem] left-[0rem]">
+                  <img
+                    src={yellowHighlight03}
+                    alt="Image"
+                    className="object-contain object-center"
+                  />
+                </div>
+              </span>
+            </h6>
 
             {/* <p className="my-[2rem] text-(--base-color-01) md:text-[2rem] md:leading-[3rem]">
               We partner with our clients to provide bespoke tax solutions,

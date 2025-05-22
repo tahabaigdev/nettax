@@ -67,7 +67,7 @@ const TimelineSection = () => {
               />
             </div>
 
-            <div className="absolute bottom-[0rem] left-[18rem] z-[-1] w-[20%] -rotate-6 md:bottom-[-1rem] md:left-[30rem]">
+            <div className="absolute bottom-[4rem] left-[20rem] z-[-1] w-[25%] md:bottom-[-1rem] md:left-[30rem] md:w-[20%]">
               <img
                 src={circle}
                 alt="Image"

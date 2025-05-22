@@ -79,7 +79,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container">
-        <div className="flex flex-col items-center gap-[8rem] xl:flex-row">
+        <div className="flex flex-col items-center gap-[4rem] md:gap-[8rem] xl:flex-row">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -157,8 +157,8 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
             className="order-[-1] xl:order-none xl:w-[51%]"
           >
-            <div className="relative h-[26rem] min-w-[32rem] md:h-[49rem] md:min-w-[60rem]">
-              <div className="absolute top-0 right-0 aspect-[.8/1] w-[53%] overflow-hidden rounded-[.8rem]">
+            <div className="relative h-[33rem] min-w-[60rem] md:h-[49rem]">
+              <div className="absolute top-0 right-[13rem] aspect-[.8/1] w-[28%] overflow-hidden rounded-[.8rem] md:right-0 md:w-[53%]">
                 <img
                   src={heroImg01}
                   alt="Hero Bg"
@@ -166,14 +166,14 @@ const HeroSection = () => {
                 />
               </div>
 
-              <div className="shadow-05 absolute bottom-[9.4rem] left-0 aspect-[1/1] w-[44%] rounded-[.8rem]">
+              <div className="shadow-05 absolute bottom-[9.4rem] left-[13rem] aspect-[1/1] w-[28%] rounded-[.8rem] md:left-0 md:w-[44%]">
                 <img
                   src={heroImg02}
                   alt="Hero Bg"
-                  className="object-contain object-center"
+                  className="object-cover object-center"
                 />
 
-                <div className="absolute bottom-[-2.6rem] left-[-2.6rem] aspect-[1/1] w-[11%]">
+                <div className="absolute bottom-[-2.6rem] left-[-1.4rem] aspect-[1/1] w-[11%] md:left-[-2.6rem]">
                   <img
                     src={rays}
                     alt="Rays"
@@ -182,7 +182,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="shadow-05 absolute right-[15.6rem] bottom-[-1.2rem] aspect-[3.5/1] w-[50%] rounded-[.8rem]">
+              <div className="shadow-05 absolute right-[20rem] bottom-[2rem] aspect-[3.8/1] w-[28%] rounded-[.8rem] md:right-[15.6rem] md:bottom-[-1.2rem] md:w-[50%]">
                 <img
                   src={heroImg03}
                   alt="Hero Bg"

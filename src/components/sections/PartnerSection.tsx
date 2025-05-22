@@ -90,7 +90,7 @@ const PartnerSection = () => {
       </div>
 
       <div className="absolute top-[20rem] right-[5rem] aspect-[1.1/1] w-[5%]">
-        <IdCard className="size-[6rem] stroke-[1.5px] text-(--primary-color)" />
+        <IdCard className="size-[4rem] stroke-[1.5px] text-(--primary-color)" />
       </div>
 
       <div className="container">
@@ -109,7 +109,7 @@ const PartnerSection = () => {
                 />
               </div>
 
-              <div className="absolute top-[0rem] left-[5rem] z-[-1] md:top-[1rem] md:left-[12rem]">
+              <div className="absolute top-[1rem] left-[10rem] z-[-1] w-[30%] -rotate-6 md:left-[14rem] md:w-[25%] lg:left-[16rem] lg:w-[30%] xl:left-[14rem]">
                 <img
                   src={blueHighlight03}
                   alt="Image"

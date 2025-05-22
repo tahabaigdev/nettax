@@ -30,11 +30,11 @@ const ContactSection = () => {
       viewport={{ once: true, amount: 0 }}
       className="relative overflow-hidden px-[2rem] py-[5rem] lg:py-[7rem] xl:px-[0rem]"
     >
-      <div className="absolute top-[20rem] right-[5rem] aspect-[1.1/1] w-[5%]">
-        <CalendarClock className="size-[6rem] -rotate-45 stroke-[1.5px] text-(--primary-color)" />
+      <div className="absolute top-[.5rem] right-[2rem] lg:top-[2rem] xl:top-[20rem] xl:right-[5rem]">
+        <CalendarClock className="size-[4rem] -rotate-45 stroke-[1.5px] text-(--primary-color)" />
       </div>
 
-      <div className="absolute bottom-[10rem] left-[5rem] aspect-[1.1/1] w-[5%]">
+      <div className="absolute bottom-[.5rem] w-[14%] -rotate-90 md:w-[8%] xl:bottom-[10rem] xl:left-[5rem] xl:w-[5%] xl:rotate-0">
         <img
           src={greyArrowLoop02}
           alt="Image"

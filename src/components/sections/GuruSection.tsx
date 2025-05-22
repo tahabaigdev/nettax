@@ -35,8 +35,8 @@ const GuruSection = () => {
         <GraduationCap className="size-[4rem] -rotate-45 stroke-[1.5px] text-(--primary-color)" />
       </div>
 
-      <div className="absolute bottom-[2rem] left-[10rem]">
-        <BookOpenText className="size-[4rem] rotate-12 stroke-[1.5px] text-(--primary-color)" />
+      <div className="md::left-[10rem] absolute bottom-[0rem] left-[30rem] lg:bottom-[2rem]">
+        <BookOpenText className="size-[3rem] rotate-12 stroke-[1.5px] text-(--primary-color) md:size-[4rem]" />
       </div>
 
       <div className="container grid gap-[6.4rem]">
