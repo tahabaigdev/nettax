@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
-import Lenis from "@studio-freight/lenis";
+
 import { useLenisStore } from "@/stores/useLenisStore";
+import Lenis from "@studio-freight/lenis";
 
 interface Props {
   children: React.ReactNode;
