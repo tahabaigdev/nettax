@@ -1,13 +1,12 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { IdCard, MoveRight } from "lucide-react";
+import { IdCard, MonitorCog, MoveRight } from "lucide-react";
 import partnerLogo1 from "/images/partner-logo-1.svg";
 import partnerLogo2 from "/images/partner-logo-2.svg";
 import partnerLogo3 from "/images/partner-logo-3.svg";
 import partnerLogo4 from "/images/partner-logo-4.svg";
 import partnerLogo5 from "/images/partner-logo-5.svg";
-import spring02 from "/images/spring-02.svg";
 import rays03 from "/images/rays-03.svg";
 import blueHighlight03 from "/images/blue-highlight-bold-03.svg";
 
@@ -81,15 +80,11 @@ const PartnerSection = () => {
       viewport={{ once: true, amount: 0 }}
       className="relative z-[1] overflow-hidden px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]"
     >
-      <div className="absolute top-[40rem] left-[5rem] z-[-1] aspect-[1.1/1] w-[5%]">
-        <img
-          src={spring02}
-          alt="Image"
-          className="object-contain object-center"
-        />
+      <div className="absolute top-[40rem] left-[5rem] z-[-1] hidden rotate-12 xl:block">
+        <MonitorCog className="size-[2rem] text-(--primary-color) md:size-[4rem]" />
       </div>
 
-      <div className="absolute top-[20rem] right-[5rem] aspect-[1.1/1] w-[5%]">
+      <div className="absolute top-[20rem] right-[5rem]">
         <IdCard className="size-[4rem] stroke-[1.5px] text-(--primary-color)" />
       </div>
 
@@ -101,7 +96,7 @@ const PartnerSection = () => {
               transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
               className="relative"
             >
-              <div className="absolute top-[-2rem] right-[2rem] w-[7%] md:right-[8rem] lg:top-[-3rem] lg:right-[-3rem]">
+              <div className="absolute top-[-2rem] right-[7rem] w-[7%] md:right-[12rem] lg:right-[-2rem] xl:right-[-2rem]">
                 <img
                   src={rays03}
                   alt="Image"
@@ -109,7 +104,7 @@ const PartnerSection = () => {
                 />
               </div>
 
-              <div className="absolute top-[1rem] left-[10rem] z-[-1] w-[30%] -rotate-6 md:left-[14rem] md:w-[25%] lg:left-[16rem] lg:w-[30%] xl:left-[14rem]">
+              <div className="absolute top-[1rem] left-[9rem] z-[-1] w-[30%] -rotate-6 md:left-[14rem] md:w-[25%] lg:left-[16rem] lg:w-[30%] xl:left-[14rem]">
                 <img
                   src={blueHighlight03}
                   alt="Image"
@@ -117,7 +112,7 @@ const PartnerSection = () => {
                 />
               </div>
 
-              <h3 className="ibm-font text-[3rem] leading-[4rem] font-medium tracking-[-2px] text-(--base-color-01) md:max-w-[60rem] md:text-[4.5rem] md:leading-[6rem]">
+              <h3 className="ibm-font max-w-[30rem] text-[3rem] leading-[4rem] font-medium tracking-[-2px] text-(--base-color-01) md:max-w-[60rem] md:text-[4.5rem] md:leading-[6rem]">
                 Trusted Partners Built on trust and expertise.
               </h3>
             </motion.div>

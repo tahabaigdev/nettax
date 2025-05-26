@@ -67,7 +67,7 @@ const TimelineSection = () => {
               />
             </div>
 
-            <div className="absolute bottom-[4rem] left-[20rem] z-[-1] w-[25%] md:bottom-[-1rem] md:left-[30rem] md:w-[20%]">
+            <div className="absolute bottom-[0rem] left-[6rem] z-[-1] w-[25%] md:bottom-[-1rem] md:left-[30rem] md:w-[20%]">
               <img
                 src={circle}
                 alt="Image"
@@ -75,7 +75,9 @@ const TimelineSection = () => {
               />
             </div>
 
-            <SectionTitle label="Strategic Legal Support for Financial Peace of Mind" />
+            <div className="max-w-[30rem] md:max-w-[70rem]">
+              <SectionTitle label="Strategic Legal Support for Financial Peace of Mind" />
+            </div>
           </motion.div>
 
           <motion.div
@@ -90,7 +92,7 @@ const TimelineSection = () => {
             transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
           >
             <Button asChild>
-              <a href="/">
+              <a href="https://wa.me/923192421501" target="_blank">
                 <span>Get Free Consultation</span>
 
                 <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />

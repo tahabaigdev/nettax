@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // or 'swiper/css/bundle' for modular CSS
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper"; // Import Swiper type
 import { motion, type Variants } from "framer-motion";
 
@@ -160,7 +160,11 @@ const CardSlider = ({ swiperRef, onSlideChange }: CardSliderProps) => {
       viewport={{ once: true, amount: 0 }}
     >
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         navigation={false}
         slidesPerView={3}
         spaceBetween={32}

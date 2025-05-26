@@ -8,10 +8,10 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./button";
-import featureImg01 from "/images/feature-img-01.png";
-import featureImg02 from "/images/feature-img-02.png";
-import featureImg03 from "/images/feature-img-03.png";
-import featureImg04 from "/images/feature-img-04.png";
+import featureImg01 from "/images/feature-img-01.webp";
+import featureImg02 from "/images/feature-img-02.webp";
+import featureImg03 from "/images/feature-img-03.webp";
+import featureImg04 from "/images/feature-img-04.webp";
 
 interface Feature {
   label: string;
@@ -160,7 +160,7 @@ const TabSlider = () => {
 
             <div className="flex flex-col items-start gap-[1rem] md:flex-row md:items-center md:gap-[2rem]">
               <Button asChild className="w-[100%] min-w-max">
-                <a href="/">
+                <a href="https://wa.me/923192421501" target="_blank">
                   <span>Get Free Consultation</span>
 
                   <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />
@@ -177,8 +177,8 @@ const TabSlider = () => {
             </div>
           </div>
 
-          <div className="flex justify-end">
-            <div className="h-[40rem] max-w-[70rem]">
+          <div className="flex w-full justify-center">
+            <div className="max-w-[60rem]">
               <img
                 src={heroSlides[selectedIndex].img}
                 className="size-full object-center"

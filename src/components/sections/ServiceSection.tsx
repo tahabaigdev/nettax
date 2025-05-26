@@ -65,7 +65,7 @@ const ServiceSection = () => {
               transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
               className="relative"
             >
-              <div className="absolute top-[-2rem] right-[1rem] w-[7%] md:right-[13rem] lg:top-[-3rem] lg:right-[0rem]">
+              <div className="absolute top-[-2rem] right-[3rem] w-[7%] md:right-[15rem] lg:right-[-2rem] xl:right-[1rem]">
                 <img
                   src={rays03}
                   alt="Image"

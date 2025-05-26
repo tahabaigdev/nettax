@@ -82,10 +82,12 @@ const DropdownMenu = ({
                 </h4>
 
                 <div className="h-[17rem] w-full bg-amber-100">
-                  <img
+                  <video
                     src={image}
-                    alt="Image"
                     className="size-full object-cover object-center"
+                    autoPlay
+                    loop
+                    muted
                   />
                 </div>
 

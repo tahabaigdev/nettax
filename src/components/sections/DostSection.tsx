@@ -31,6 +31,7 @@ const DostSection = () => {
 
   return (
     <motion.section
+      id="dost-section"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -40,7 +41,7 @@ const DostSection = () => {
       <div className="bg-dot absolute inset-0 z-[-1] size-[100%] opacity-[0.05]"></div>
 
       <div className="absolute top-[2rem] left-[5rem] -rotate-45 md:top-[5rem]">
-        <Receipt className="size-[4rem] text-(--primary-color)" />
+        <Receipt className="size-[3rem] text-(--primary-color) md:size-[4rem]" />
       </div>
 
       <div className="absolute bottom-[5rem] left-[5rem] rotate-45">
@@ -65,7 +66,7 @@ const DostSection = () => {
             />
           </div>
 
-          <div className="absolute right-[17rem] bottom-[-1rem] z-[-1] w-[20%] rotate-12 md:right-[18rem]">
+          <div className="absolute right-[10rem] bottom-[0rem] z-[-1] w-[20%] rotate-12 md:right-[18rem] md:bottom-[-1rem]">
             <img
               src={highlighter}
               alt="Image"
@@ -73,7 +74,9 @@ const DostSection = () => {
             />
           </div>
 
-          <SectionTitle label="Unleash the power of netTax Dost" />
+          <div className="max-w-[40rem] md:max-w-[70rem]">
+            <SectionTitle label="Unleash the power of netTax Dost" />
+          </div>
         </motion.div>
 
         <motion.div
@@ -88,7 +91,7 @@ const DostSection = () => {
           transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
         >
           <Button asChild>
-            <a href="/">
+            <a href="https://wa.me/923192421501" target="_blank">
               <span>Get Free Consultation</span>
 
               <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />

@@ -133,7 +133,7 @@ const HeroSection = () => {
               className="mt-[3.2rem] flex flex-col items-center gap-[2rem] md:flex-row"
             >
               <Button className="w-full md:w-auto" asChild>
-                <a href="/">
+                <a href="https://wa.me/923192421501" target="_blank">
                   <span>Get Free Consultation</span>
 
                   <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />

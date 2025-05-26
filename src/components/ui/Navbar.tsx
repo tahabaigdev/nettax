@@ -8,7 +8,7 @@ const Navbar = () => {
         <DropdownMenu
           label="About Us"
           description="Planetary problems. Global solutions. Local deployment."
-          image="/images/about-dropdown.jpg"
+          image="/images/about-dropdown.webm"
           href="/"
           items={[
             {
@@ -44,13 +44,13 @@ const Navbar = () => {
           label="Nettax Dost"
           description="Planetary problems. Global solutions. Local deployment."
           href="/"
-          image="/images/nettax-dost-dropdown.gif"
+          image="/images/nettax-dost-dropdown.webm"
           items={[
             {
               label: "About Nettax Dost",
               description:
                 "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+              href: "#dost-section",
             },
             {
               label: "Nettax Agent",
@@ -79,7 +79,7 @@ const Navbar = () => {
           label="Nettax Guru"
           description="Planetary problems. Global solutions. Local deployment."
           href="/"
-          image="/images/nettax-guru-dropdown.gif"
+          image="/images/nettax-guru-dropdown.webm"
           items={[
             {
               label: "Resources",
@@ -113,7 +113,7 @@ const Navbar = () => {
         <DropdownMenu
           label="Our Services"
           description="Planetary problems. Global solutions. Local deployment."
-          image="/images/nettax-services-dropdown.jpeg"
+          image="/images/service-dropdown.webm"
           href="/"
           items={[
             {

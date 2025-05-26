@@ -25,7 +25,7 @@ const imagesMap: Record<string, React.ReactNode> = {
 
         <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
           <img
-            src={netTaxGuruImg01}
+            src={netTaxGuruImg03}
             alt="About Section Bg"
             className="object-cover object-center"
           />
@@ -79,7 +79,7 @@ const imagesMap: Record<string, React.ReactNode> = {
 
         <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
           <img
-            src={netTaxGuruImg03}
+            src={netTaxGuruImg01}
             alt="About Section Bg"
             className="object-cover object-center"
           />

@@ -54,7 +54,7 @@ const GuruSection = () => {
               />
             </div>
 
-            <div className="absolute top-[1rem] left-[15rem] md:top-[5rem] md:left-[26rem]">
+            <div className="absolute top-[8.5rem] left-[4rem] w-[35%] md:top-[5rem] md:left-[26rem] md:w-auto">
               <img
                 src={blueHighlight01}
                 alt="Image"
@@ -62,7 +62,9 @@ const GuruSection = () => {
               />
             </div>
 
-            <SectionTitle label="Achieve Financial Success with Our Trusted Experts" />
+            <div className="max-w-[30rem] md:max-w-[70rem]">
+              <SectionTitle label="Achieve Financial Success with Our Trusted Experts" />
+            </div>
           </motion.div>
 
           <motion.div
@@ -77,7 +79,7 @@ const GuruSection = () => {
             transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
           >
             <Button asChild>
-              <a href="/">
+              <a href="https://wa.me/923192421501" target="_blank">
                 <span>Get Free Consultation</span>
 
                 <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />

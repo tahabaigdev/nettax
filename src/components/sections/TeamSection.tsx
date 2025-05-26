@@ -1,12 +1,11 @@
 import { AnimatedTestimonials } from "../ui/animated-testimonials";
-import jahangeer from "/images/jahangeer.jpg";
-import saiqa from "/images/saiqa.jpg";
-import awais from "/images/awais.jpg";
-import saqib from "/images/saqib.jpg";
-import dummyFemale from "/images/dummy-female.jpg";
-import dummyFemale2 from "/images/dummy-female-2.jpg";
-import dummyMen from "/images/dummy-men.jpg";
-import spring02 from "/images/spring-02.svg";
+import jahangeer from "/images/jahangeer.webp";
+import saiqa from "/images/saiqa.webp";
+import awais from "/images/awais.webp";
+import saqib from "/images/saqib.webp";
+import kashaf from "/images/kashaf.webp";
+import ahad from "/images/ahad.webp";
+import { AudioWaveform, Boxes } from "lucide-react";
 
 const testimonials = [
   {
@@ -35,21 +34,14 @@ const testimonials = [
       "Kashaf brings fresh ideas and energy to the team, making sure our services reach the right people with the right message.",
     name: "Kashaf Qadir",
     designation: "Marketing Executive",
-    src: dummyFemale2,
+    src: kashaf,
   },
   {
     quote:
       "Abdul connects the firm with new opportunities, building strong relationships and helping the business grow with purpose.",
     name: "Abdul Ahad",
     designation: "Business Development",
-    src: dummyMen,
-  },
-  {
-    quote:
-      "Noama approaches every case with care and precision, committed to delivering thoughtful and effective legal solutions.",
-    name: "Noama Khan",
-    designation: "Associate Lawyer",
-    src: dummyFemale,
+    src: ahad,
   },
   {
     quote:
@@ -63,12 +55,12 @@ const testimonials = [
 const TeamSection = () => {
   return (
     <section className="relative overflow-hidden bg-[#EEF8FF] px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]">
-      <div className="absolute top-[10rem] left-[5rem] aspect-[1.1/1] w-[4%]">
-        <img
-          src={spring02}
-          alt="Image"
-          className="object-contain object-center"
-        />
+      <div className="absolute top-[38rem] left-[3rem] -rotate-12 md:top-[50rem]">
+        <Boxes className="size-[3rem] stroke-[1px] text-(--primary-color) md:size-[4rem]" />
+      </div>
+
+      <div className="absolute top-[2rem] right-[1rem] -rotate-12 md:right-[5rem]">
+        <AudioWaveform className="size-[3rem] stroke-[1px] text-(--primary-color) md:size-[4rem]" />
       </div>
 
       <div className="container">

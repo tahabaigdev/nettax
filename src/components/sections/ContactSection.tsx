@@ -1,10 +1,8 @@
-import { Button } from "../ui/button";
-import { CalendarClock, ChevronRight } from "lucide-react";
+import { CalendarClock, PhoneOutgoing } from "lucide-react";
 import ContactForm from "../ui/ContactForm";
 import { motion, type Variants } from "framer-motion";
 import bgNoise from "/images/bg-noise.avif";
 import logoIcon from "/images/logo-icon.svg";
-import greyArrowLoop02 from "/images/grey-arrow-loop-02.svg";
 
 const ContactSection = () => {
   // Animation Variants
@@ -34,12 +32,8 @@ const ContactSection = () => {
         <CalendarClock className="size-[4rem] -rotate-45 stroke-[1.5px] text-(--primary-color)" />
       </div>
 
-      <div className="absolute bottom-[.5rem] w-[14%] -rotate-90 md:w-[8%] xl:bottom-[10rem] xl:left-[5rem] xl:w-[5%] xl:rotate-0">
-        <img
-          src={greyArrowLoop02}
-          alt="Image"
-          className="object-contain object-center"
-        />
+      <div className="absolute bottom-[1rem] left-[5rem] lg:bottom-[10rem]">
+        <PhoneOutgoing className="size-[2rem] text-(--primary-color) lg:size-[4rem]" />
       </div>
 
       <motion.div
@@ -79,24 +73,6 @@ const ContactSection = () => {
               Legal matters can feel overwhelming, but you&apos;re not alone.
               Contact us today for trusted, personalized support.
             </p>
-
-            <div className="flex flex-col items-center gap-[2rem] md:flex-row">
-              <Button className="w-full md:w-auto" asChild>
-                <a href="/">
-                  <span>Get Free Consultation</span>
-
-                  <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />
-                </a>
-              </Button>
-
-              <Button className="w-full md:w-auto" variant="dark" asChild>
-                <a href="/">
-                  <span>Become a Filer</span>
-
-                  <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </motion.div>

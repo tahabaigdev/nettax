@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { useEffect, useState } from "react";
 import yellowHighlight03 from "/images/yellow-highlight-03.svg";
+import rays03 from "/images/rays-03.svg";
 
 type Testimonial = {
   quote: string;
@@ -154,6 +155,13 @@ export const AnimatedTestimonials = ({
                   <img
                     src={yellowHighlight03}
                     alt="Image"
+                    className="object-contain object-center"
+                  />
+                </div>
+                <div className="absolute top-[-1rem] right-[-2rem] w-[30%] md:right-[-3rem] lg:top-[-2rem]">
+                  <img
+                    src={rays03}
+                    alt="icon"
                     className="object-contain object-center"
                   />
                 </div>
