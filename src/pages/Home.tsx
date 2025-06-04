@@ -1,3 +1,4 @@
+import HelmetSeo from "@/components/layout/HelmetSeo";
 import ContactSection from "@/components/sections/ContactSection";
 import DostSection from "@/components/sections/DostSection";
 import FeatureSection from "@/components/sections/FeatureSection";
@@ -11,6 +12,11 @@ import TimelineSection from "@/components/sections/TimelineSection";
 const Home = () => {
   return (
     <main>
+      <HelmetSeo
+        title="Home - Nettax"
+        description="Welcome to the homepage of Nettax."
+      />
+
       <HeroSection />
 
       <DostSection />

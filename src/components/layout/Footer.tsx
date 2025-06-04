@@ -1,13 +1,14 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import ToTopButton from "../ui/ToTopButton";
 import logoWhite from "/images/logo-white.svg";
+import { NavLink } from "react-router-dom";
 
 const productsItem = [
-  "Home",
-  "Services",
-  "Price List",
-  "About Us",
-  "Tax Calculator",
+  { label: "Home", link: "/" },
+  { label: "Services", link: "/services" },
+  { label: "Price List", link: "/price-list" },
+  { label: "About Us", link: "/about-us" },
+  { label: "Tax Calculator", link: "/tax-calculator" },
 ];
 
 const productsItem2 = ["Sindh Revenue Board", "SECP", "PSEB", "FBR"];
@@ -33,14 +34,14 @@ const Footer = () => {
             </h5>
 
             <ul className="flex flex-col gap-[1rem] text-white">
-              {productsItem.map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
+              {productsItem.map((item, idx) => (
+                <li key={idx}>
+                  <NavLink
+                    to={item.link}
                     className="text-[1.6rem] font-normal transition-all duration-200 hover:opacity-70"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </NavLink>
                 </li>
               ))}
             </ul>

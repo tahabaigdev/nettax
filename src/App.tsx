@@ -1,15 +1,23 @@
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
-import { LenisProvider } from "./components/providers/LenisProvider";
 import Home from "./pages/Home";
+import Blog from "./pages/Blog";
+import Post from "./pages/Post";
+import TaxCalculator from "./pages/TaxCalculator";
 
 const App = () => {
   return (
-    <LenisProvider>
+    <>
       <Header />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tax-calculator" element={<TaxCalculator />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<Post />} />
+      </Routes>
       <Footer />
-    </LenisProvider>
+    </>
   );
 };
 
