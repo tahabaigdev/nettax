@@ -1,8 +1,10 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence, type Variants } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 import yellowHighlight03 from "/images/yellow-highlight-03.svg";
 import rays03 from "/images/rays-03.svg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 type Testimonial = {
   quote: string;
@@ -43,41 +45,15 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
 
-  // Animation Variants
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // adjust time between each element
-      },
-    },
-  };
-
-  const fadeLeft: Variants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const fadeRight: Variants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
-  };
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0 }}
-      className=""
-    >
+    <div className="">
       <div className="relative grid grid-cols-1 items-center gap-[6rem] lg:grid-cols-2 lg:gap-[0rem]">
-        <motion.div
-          variants={fadeLeft}
-          transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-          className="flex justify-center lg:block"
-        >
-          <div className="relative aspect-[1/1] w-[70%]">
+        <div className="flex justify-center lg:block">
+          <div data-aos="fade-right" className="relative aspect-[1/1] w-[70%]">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -120,11 +96,10 @@ export const AnimatedTestimonials = ({
               ))}
             </AnimatePresence>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeRight}
-          transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+        <div
+          data-aos="fade-left"
           className="flex flex-col items-center text-center lg:items-start lg:text-left"
         >
           <motion.div
@@ -224,8 +199,8 @@ export const AnimatedTestimonials = ({
               <ArrowRight className="size-[2rem] text-white transition-transform duration-300 group-hover/button:-rotate-12" />
             </button>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };

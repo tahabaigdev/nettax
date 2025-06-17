@@ -6,6 +6,9 @@ import saqib from "/images/saqib.webp";
 import kashaf from "/images/kashaf.webp";
 import ahad from "/images/ahad.webp";
 import { AudioWaveform, Boxes } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
+import { useEffect } from "react";
 
 const testimonials = [
   {
@@ -31,30 +34,37 @@ const testimonials = [
   },
   {
     quote:
-      "Kashaf brings fresh ideas and energy to the team, making sure our services reach the right people with the right message.",
-    name: "Kashaf Qadir",
-    designation: "Marketing Executive",
-    src: kashaf,
-  },
-  {
-    quote:
-      "Abdul connects the firm with new opportunities, building strong relationships and helping the business grow with purpose.",
-    name: "Abdul Ahad",
-    designation: "Business Development",
-    src: ahad,
-  },
-  {
-    quote:
       "Saqib Soomro is a Tax Litigation Associate skilled in resolving tax disputes and protecting client interests.",
     name: "Saqib soomro",
     designation: "Tax Litigation Associate",
     src: saqib,
   },
+  {
+    quote:
+      "Abdullah designs and delivers skill-based training programs to enhance team performance and client engagement. He applies psychological insights to improve communication, motivation, and workplace well-being.",
+    name: " Abdullah Mangi",
+    designation: "Trainer and Psychologist",
+    src: ahad,
+  },
+  {
+    quote:
+      "Kashaf brings fresh ideas and energy to the team, making sure our services reach the right people with the right message.",
+    name: "Kashaf Qadir",
+    designation: "Marketing Executive",
+    src: kashaf,
+  },
 ];
 
 const TeamSection = () => {
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-[#EEF8FF] px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]">
+    <section
+      id="our-team"
+      className="relative overflow-hidden bg-[#EEF8FF] px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]"
+    >
       <div className="absolute top-[38rem] left-[3rem] -rotate-12 md:top-[50rem]">
         <Boxes className="size-[3rem] stroke-[1px] text-(--primary-color) md:size-[4rem]" />
       </div>

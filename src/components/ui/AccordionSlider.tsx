@@ -1,126 +1,33 @@
-import { Cross, Cuboid, Pyramid } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import aboutSectionBg from "/images/hero-bg.avif";
-import netTaxGuruImg01 from "/images/nettax-guru-img-01.png";
-import netTaxGuruImg02 from "/images/nettax-guru-img-02.png";
-import netTaxGuruImg03 from "/images/nettax-guru-img-03.png";
-import circle01 from "/images/circle-01.svg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
-const imagesMap: Record<string, React.ReactNode> = {
-  "item-1": (
-    <>
-      <div className="relative size-full">
-        <img
-          src={aboutSectionBg}
-          alt="About Section Bg"
-          className="size-full object-contain object-center"
-        />
-
-        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
-          <img
-            src={netTaxGuruImg03}
-            alt="About Section Bg"
-            className="object-cover object-center"
-          />
-        </div>
-
-        <div className="aspect-[2 / 1] absolute right-[-1rem] bottom-[-1rem] w-[50%]">
-          <img
-            src={circle01}
-            alt="About Section Bg"
-            className="object-contain object-center"
-          />
-        </div>
-      </div>
-    </>
-  ),
-  "item-2": (
-    <>
-      <div className="relative size-full">
-        <img
-          src={aboutSectionBg}
-          alt="About Section Bg"
-          className="size-full object-contain object-center"
-        />
-
-        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
-          <img
-            src={netTaxGuruImg02}
-            alt="About Section Bg"
-            className="object-cover object-center"
-          />
-        </div>
-
-        <div className="aspect-[2 / 1] absolute right-[-1rem] bottom-[-1rem] w-[50%]">
-          <img
-            src={circle01}
-            alt="About Section Bg"
-            className="object-contain object-center"
-          />
-        </div>
-      </div>
-    </>
-  ),
-  "item-3": (
-    <>
-      <div className="relative size-full">
-        <img
-          src={aboutSectionBg}
-          alt="About Section Bg"
-          className="size-full object-contain object-center"
-        />
-
-        <div className="aspect-[.9 / 1] absolute top-1/2 left-1/2 w-[70%] translate-[-50%]">
-          <img
-            src={netTaxGuruImg01}
-            alt="About Section Bg"
-            className="object-cover object-center"
-          />
-        </div>
-
-        <div className="aspect-[2 / 1] absolute right-[-1rem] bottom-[-1rem] w-[50%]">
-          <img
-            src={circle01}
-            alt="About Section Bg"
-            className="object-contain object-center"
-          />
-        </div>
-      </div>
-    </>
-  ),
+export type AccordionItemType = {
+  id: string;
+  title: string;
+  desc: string;
+  icon: React.ElementType;
 };
 
-const accordionItems = [
-  {
-    id: "item-1",
-    title: "Efficient Tax Savings",
-    desc: "Strategic, compliant tax planning designed to optimize returns and reduce liabilities.",
-    icon: Cuboid,
-  },
-  {
-    id: "item-2",
-    title: "Complete Tax Profile Management",
-    desc: "With netTax, your entire tax profile is in safe hands. From NTN registration to filing returns and keeping records, we manage everything for you accurately, securely, and on time. You stay stress-free while we handle the rest.",
-    icon: Pyramid,
-  },
-  {
-    id: "item-3",
-    title: "Tax Education & Insights",
-    desc: "Empowering you with expert knowledge and actionable insights for smarter financial decisions.",
-    icon: Cross,
-  },
-];
+type AccordionSliderProps = {
+  items: AccordionItemType[];
+  imageMap: Record<string, React.ReactNode>;
+  autoRotateInterval?: number;
+};
 
-const AccordionSlider: React.FC = () => {
-  const [activeItem, setActiveItem] = useState<string>("item-1");
-  const items = ["item-1", "item-2", "item-3"];
+const AccordionSlider: React.FC<AccordionSliderProps> = ({
+  items,
+  imageMap,
+  autoRotateInterval = 10000,
+}) => {
+  const [activeItem, setActiveItem] = useState(items[0]?.id || "");
 
   const handleChange = (value: string) => {
     setActiveItem(value);
@@ -128,58 +35,70 @@ const AccordionSlider: React.FC = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const currentIndex = items.indexOf(activeItem);
+      const currentIndex = items.findIndex((i) => i.id === activeItem);
       const nextIndex = (currentIndex + 1) % items.length;
-      setActiveItem(items[nextIndex]);
-    }, 5000); // 5 seconds
+      setActiveItem(items[nextIndex].id);
+    }, autoRotateInterval);
 
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeItem]);
+  }, [activeItem, items, autoRotateInterval]);
+
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-between gap-[3.2rem] xl:flex-row xl:items-start">
-      <div className="w-full xl:max-w-[45%]">
+      <div data-aos="fade-right" className="w-full xl:max-w-[45%]">
         <Accordion
           type="single"
           className="w-full"
           value={activeItem}
           onValueChange={handleChange}
         >
-          {accordionItems.map((item) => (
-            <AccordionItem
-              key={item.id}
-              value={item.id}
-              className="relative border-none py-[2.4rem] data-[state=open]:pb-[1.2rem]"
-            >
-              <AccordionTrigger className="ibm-font group flex items-center justify-start gap-[1.2rem] text-[2rem] leading-[2.8rem] font-semibold text-(--base-color-01) !no-underline data-[state=open]:text-(--heading-color-01) md:data-[state=open]:text-[2.8rem]">
-                <item.icon className="size-[3.2rem] !rotate-none stroke-[0.5px] text-(--primary-color) transition-all duration-300 group-data-[state=open]:size-[4rem] group-data-[state=open]:fill-(--primary-color) group-data-[state=open]:text-white" />
-                <span>{item.title}</span>
-              </AccordionTrigger>
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <AccordionItem
+                key={item.id}
+                value={item.id}
+                className="relative border-none py-[2.4rem] data-[state=open]:pb-[1.2rem]"
+              >
+                <AccordionTrigger className="ibm-font group flex items-center justify-start gap-[1.2rem] text-[2rem] leading-[2.8rem] font-semibold text-(--base-color-01) !no-underline data-[state=open]:text-(--heading-color-01) md:data-[state=open]:text-[2.8rem]">
+                  <Icon className="size-[3.2rem] !rotate-none stroke-[0.5px] text-(--primary-color) transition-all duration-300 group-data-[state=open]:size-[4rem] group-data-[state=open]:fill-(--primary-color) group-data-[state=open]:text-white" />
+                  <span>{item.title}</span>
+                </AccordionTrigger>
 
-              <AccordionContent className="px-[.4rem] py-[1.2rem]">
-                <p className="text-[1.6rem] leading-[2.56rem] font-normal text-(--base-color-01)">
-                  {item.desc}
-                </p>
-              </AccordionContent>
+                <AccordionContent className="px-[.4rem] py-[1.2rem]">
+                  <p className="text-[1.6rem] leading-[2.56rem] font-normal text-(--base-color-01)">
+                    {item.desc}
+                  </p>
+                </AccordionContent>
 
-              {activeItem === item.id && (
-                <div className="absolute bottom-0 left-0 h-[3px] w-full overflow-hidden bg-[#D4E0ED]">
-                  <motion.div
-                    key={item.id}
-                    className="h-full bg-(--primary-color)"
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 5, ease: "linear" }}
-                  />
-                </div>
-              )}
-            </AccordionItem>
-          ))}
+                {activeItem === item.id && (
+                  <div className="absolute bottom-0 left-0 h-[3px] w-full overflow-hidden bg-[#D4E0ED]">
+                    <motion.div
+                      key={item.id}
+                      className="h-full bg-(--primary-color)"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{
+                        duration: autoRotateInterval / 1000,
+                        ease: "linear",
+                      }}
+                    />
+                  </div>
+                )}
+              </AccordionItem>
+            );
+          })}
         </Accordion>
       </div>
 
-      <div className="-order-1 flex h-[35rem] w-full items-start justify-center md:h-[55rem] md:max-w-[80%] lg:h-[45.7rem] lg:max-w-[50%] xl:order-none xl:max-w-[38%]">
+      <div
+        data-aos="fade-left"
+        className="-order-1 flex h-[35rem] w-full items-start justify-center md:h-[55rem] md:max-w-[80%] lg:h-[45.7rem] lg:max-w-[50%] xl:order-none xl:max-w-[38%]"
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={activeItem}
@@ -196,7 +115,7 @@ const AccordionSlider: React.FC = () => {
             }}
             className="relative size-full overflow-hidden rounded-[2.4rem]"
           >
-            {imagesMap[activeItem]}
+            {imageMap[activeItem]}
           </motion.div>
         </AnimatePresence>
       </div>

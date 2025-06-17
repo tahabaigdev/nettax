@@ -3,84 +3,199 @@ import MobileMenuNavlink from "./MobileMenuNavlink";
 
 const MobileMenuNavbar = () => {
   return (
-    <ul className="mx-[1.6rem] my-[2rem]">
+    <ul className="mx-[1.6rem]">
       <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
         <MobileMenuDropdown
-          label="Company"
-          description="Planetary problems. Global solutions. Local deployment."
+          label="About Us"
+          description=""
           href="/"
           items={[
             {
-              label: "About Us",
+              label: "Who We Are",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "We are seasoned tax professionals in Pakistan, dedicated to providing expert guidance and tailored solutions.",
+              href: "/about#who-we-are",
             },
             {
-              label: "Services",
+              label: "Our Mission & Vision",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "We empower clients through transparent, personalized tax strategies and dependable support, making compliance simple and stress‑free.",
+              href: "/about#our-mission",
+            },
+            {
+              label: "Our Team",
+              description:
+                "Our highly qualified team delivers top-tier legal and client-centered services with professionalism and integrity.",
+              href: "/about#our-team",
+            },
+            {
+              label: "Why Choose Nettax?",
+              description:
+                "Choose Nettax for trusted expertise and customized tax solutions tailored to your specific needs.",
+              href: "/about#why-choose-nettax",
+            },
+          ]}
+        />
+      </li>
+
+      <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
+        <MobileMenuDropdown
+          label="Nettax Dost"
+          description=""
+          href="/"
+          items={[
+            {
+              label: "About Nettax Dost",
+              description:
+                "Your free tax assistant for quick answers and expert guidance.",
+              href: "/nettax-dost#about-nettax-dost",
+            },
+            {
+              label: "How it Works",
+              description:
+                "Create your profile to access courses, tools, and certifications instantly.",
+              href: "/nettax-dost#how-it-work",
+            },
+            {
+              label: "Who Can Join",
+              description:
+                "Certified tax professionals offering personalized filing and compliance solutions.",
+              href: "/nettax-dost#who-can-join",
+            },
+            {
+              label: "Start Earning",
+              description:
+                "Find verified tax agents near you for seamless assistance.",
+              href: "/nettax-dost#start-earning",
+            },
+          ]}
+        />
+      </li>
+
+      <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
+        <MobileMenuDropdown
+          label="Nettax Guru"
+          description=""
+          href="/"
+          items={[
+            {
+              label: "Tax Courses",
+              description:
+                "Practical tax training from basics to advanced—learn from industry experts.",
+              href: "/nettax-guru#tax-courses",
+            },
+            {
+              label: "Certifications",
+              description:
+                "Earn recognized credentials to boost your tax career and credibility.",
+              href: "/nettax-guru#certifications",
+            },
+            {
+              label: "Learning Modes",
+              description:
+                "Flexible learning: self-paced, live classes, or corporate training—your choice.",
+              href: "/nettax-guru#learning-modes",
+            },
+            {
+              label: "Support",
+              description:
+                "Dedicated help for your tax learning journey—ask us anything!",
+              href: "/nettax-guru#support",
+            },
+          ]}
+        />
+      </li>
+
+      <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
+        <MobileMenuDropdown
+          label="Our Services"
+          description=""
+          href="/"
+          items={[
+            {
+              label: "NTN Registration",
+              description:
+                "We help individuals and businesses get their National Tax Number (NTN) from FBR, which is necessary to file taxes and run legal financial activities in Pakistan.",
+              href: "/our-services#ntn-registration",
+            },
+            {
+              label: "Sales Tax Registration & Returns",
+              description:
+                "We assist businesses in getting registered for sales tax and filing their monthly returns accurately and on time, helping them stay compliant with FBR rules.",
+              href: "/our-services#income-tax",
+            },
+            {
+              label: "NGO/NPO Registration",
+              description:
+                "We guide you step by step to register your non-profit organization and help you apply for tax exemptions and legal approvals.",
+              href: "/our-services#sales-tax",
+            },
+            {
+              label: "Income Tax Return Filing",
+              description:
+                "Our experts file your annual income tax return, help with tax planning, and manage your FBR profile to avoid any issues or penalties.",
+              href: "/our-services#trademark-company",
+            },
+            {
+              label: "Trademark & Company Registration",
+              description:
+                "We make it easy for you to register your business and trademark your brand name officially with SECP and IPO Pakistan, protecting your identity legally.",
+              href: "/our-services#ngo-npo",
+            },
+            {
+              label: "Legal Advisory & SECP Compliance",
+              description:
+                "We provide clear legal advice and help your company stay updated with SECP regulations, including all necessary legal filings.",
+              href: "/our-services#legal-advisory",
+            },
+          ]}
+        />
+      </li>
+
+      <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
+        <MobileMenuDropdown
+          label="Resources"
+          description=""
+          href="/"
+          items={[
+            {
+              label: "Blog",
+              description:
+                "Authoritative insights and tax tips to keep you informed",
+              href: "/blog",
             },
             {
               label: "Price List",
-              description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+              description: "Transparent service pricing—no hidden fees",
+              href: "/price-list",
             },
             {
-              label: "Price List",
-              description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+              label: "Tax Calculator",
+              description: "User-friendly tool for instant tax estimates",
+              href: "/tax-calculator",
             },
             {
-              label: "About Us",
-              description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+              label: "SRB (Sindh Revenue Board)",
+              description: "Expert assistance with regional tax compliance",
+              href: "https://www.srb.gos.pk/srb/",
             },
             {
-              label: "Services",
+              label: "FBR / SECP Services",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "Step-by-step guides to official registration and filing portals",
+              href: "https://www.secp.gov.pk/",
             },
             {
-              label: "Price List",
+              label: "PSEB Support",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "Dedicated help for IT firms seeking PSEB registration",
+              href: "https://techdestination.com/",
             },
             {
-              label: "Price List",
+              label: "FBR",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
-            },
-            {
-              label: "Price List",
-              description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
-            },
-            {
-              label: "Price List",
-              description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
-            },
-            {
-              label: "Price List",
-              description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
-            },
-            {
-              label: "Price List",
-              description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "FBR tax registration, returns, and audit support for individuals/businesses.",
+              href: "https://fbr.gov.pk/",
             },
           ]}
         />
@@ -91,11 +206,7 @@ const MobileMenuNavbar = () => {
       </li>
 
       <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
-        <MobileMenuNavlink href="/contact" label="Contact Us" />
-      </li>
-
-      <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
-        <MobileMenuNavlink href="/blog" label="Blog" />
+        <MobileMenuNavlink href="/#contact" label="Contact Us" />
       </li>
     </ul>
   );

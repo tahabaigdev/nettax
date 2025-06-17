@@ -20,7 +20,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // or 'swiper/css/bundle' for modular CSS
 import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper"; // Import Swiper type
-import { motion, type Variants } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
+import { useEffect } from "react";
 
 const slideData = [
   {
@@ -137,28 +139,12 @@ type CardSliderProps = {
 };
 
 const CardSlider = ({ swiperRef, onSlideChange }: CardSliderProps) => {
-  // Animation Variants
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // adjust time between each element
-      },
-    },
-  };
-
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  };
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0 }}
-    >
+    <div data-aos="fade-up">
       <Swiper
         modules={[Navigation, Autoplay]}
         autoplay={{
@@ -195,9 +181,7 @@ const CardSlider = ({ swiperRef, onSlideChange }: CardSliderProps) => {
       >
         {slideData.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <motion.a
-              variants={fadeUp}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+            <a
               key={idx}
               href={item.link}
               className="group relative z-[1] grid h-full overflow-hidden rounded-[2.4rem] border border-[var(--primary-color)] px-[4rem] py-[3.2rem]"
@@ -258,11 +242,11 @@ const CardSlider = ({ swiperRef, onSlideChange }: CardSliderProps) => {
                   </defs>
                 </svg>
               </div>
-            </motion.a>
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>
-    </motion.div>
+    </div>
   );
 };
 

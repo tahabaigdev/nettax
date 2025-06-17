@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import MobileMenuNavbar from "../ui/MobileMenuNavbar";
 import { Button } from "../ui/button";
 import { useMenuStore } from "@/stores/useMenuStore";
+import { NavLink } from "react-router-dom";
 
 const MobileMenu = () => {
   const { setIsMenuOpen, setActiveDropdown, activeDropdown } = useMenuStore();
@@ -11,11 +12,11 @@ const MobileMenu = () => {
     <div className="flex h-[100vh] w-full flex-col bg-white p-[.4rem]">
       <div className="flex items-center justify-between border-b border-dashed border-[#e4e4e4] p-[1.6rem]">
         <div className="relative h-[3rem] w-[6rem]">
-          <a
+          <NavLink
             onClick={() => {
               setIsMenuOpen(false);
             }}
-            href="/"
+            to="/"
             className={clsx(
               "ibm-font absolute top-[50%] inline-flex -translate-y-[50%] text-[2rem] font-bold tracking-wider text-(--primary-color) transition-all duration-200",
               activeDropdown
@@ -24,10 +25,10 @@ const MobileMenu = () => {
             )}
           >
             NETTAX
-          </a>
+          </NavLink>
 
           <button
-            onClick={() => setActiveDropdown(false)}
+            onClick={() => setActiveDropdown(null)} // ✅ Corrected
             className={clsx(
               "absolute top-[50%] flex -translate-y-[50%] cursor-pointer gap-[.5rem] text-[1.6rem] font-normal text-(--primary-color) transition-all duration-200",
               activeDropdown

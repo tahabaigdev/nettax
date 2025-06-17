@@ -33,6 +33,11 @@
     rgba(0, 0, 0, 0.04) 0px 43.962px 17.5848px -4.375px,
     rgba(0, 0, 0, 0) 0px 80px 32px -5px;
 
+  /* Linear Gradient */
+  --gradient-01:
+    270deg, rgba(0, 0, 0, 0.4) 54%, rgb(23, 23, 23) 100%,
+    rgba(23, 23, 23, 0.99) 100%;
+
   /* Responsive Breakpoints */
   --breakpoint-sm: 425px;
   --breakpoint-md: 768px;
@@ -43,7 +48,6 @@
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth; /* let Lenis handle it */
 }
 
 body {
@@ -80,7 +84,8 @@ h6 {
   background-repeat: repeat;
 }
 
-.swiper {
+.swiper,
+.team-slider {
   width: 100%;
   height: 100%;
 }
@@ -185,4 +190,43 @@ h6 {
 .post-content hr {
   margin: 2rem 0rem;
   border-color: rgb(233 226 218);
+}
+
+.team-slider {
+  overflow: visible !important;
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 70%,
+    rgb(39, 121, 167) 100%
+  );
+  z-index: 10; /* make sure it appears above content if needed */
+  pointer-events: none;
 }

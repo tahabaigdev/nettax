@@ -8,34 +8,21 @@ import {
   Receipt,
 } from "lucide-react";
 import { ContainerScroll } from "../ui/container-scroll-animation";
-import { motion, type Variants } from "framer-motion";
 import rays03 from "/images/rays-03.svg";
-import netTaxDostDash from "/images/nettax-dost-dash.gif";
+import nettaxDostDash from "/images/nettax-dost-dash-main.webm";
 import highlighter from "/images/highlighter.svg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
+import { useEffect } from "react";
 
 const DostSection = () => {
-  // Animation Variants
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // adjust time between each element
-      },
-    },
-  };
-
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  };
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
-    <motion.section
+    <section
       id="dost-section"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
       className="relative z-[1] overflow-hidden bg-[#EEF8FF] py-[5rem] lg:py-[9.6rem]"
     >
       <div className="bg-dot absolute inset-0 z-[-1] size-[100%] opacity-[0.05]"></div>
@@ -53,11 +40,7 @@ const DostSection = () => {
       </div>
 
       <div className="relative z-[1] flex flex-col items-center gap-[2.4rem] text-center">
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-          className="relative"
-        >
+        <div data-aos="fade-up" className="relative">
           <div className="absolute top-[-2rem] right-[1rem] w-[7%] md:top-[-3.5rem] md:right-[2rem]">
             <img
               src={rays03}
@@ -75,21 +58,15 @@ const DostSection = () => {
           </div>
 
           <div className="max-w-[40rem] md:max-w-[70rem]">
-            <SectionTitle label="Unleash the power of netTax Dost" />
+            <SectionTitle label="Unleash the power of nettax Dost" />
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-        >
-          <SectionDescription label="netTax Dost is your personal tax buddy smart, simple, and always by your side. It empowers you to earn by helping your friends and network get their taxes filed through legitimate tax experts at netTax. Whether you're a student, freelancer, or just starting out, netTax Dost gives you the tools and support to grow, connect, and make a real impact." />
-        </motion.div>
+        <div data-aos="fade-up">
+          <SectionDescription label="nettax Dost is your personal tax buddy smart, simple, and always by your side. It empowers you to earn by helping your friends and network get their taxes filed through legitimate tax experts at nettax. Whether you're a student, freelancer, or just starting out, nettax Dost gives you the tools and support to grow, connect, and make a real impact." />
+        </div>
 
-        <motion.div
-          variants={fadeUp}
-          transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-        >
+        <div data-aos="fade-up">
           <Button asChild>
             <a href="https://wa.me/923192421501" target="_blank">
               <span>Get Free Consultation</span>
@@ -97,26 +74,27 @@ const DostSection = () => {
               <ChevronRight className="relative top-[3px] left-[.3rem] size-[1.5rem] stroke-3 transition-all duration-200 group-hover:left-[.6rem]" />
             </a>
           </Button>
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        variants={fadeUp}
-        transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+      <div
+        data-aos="fade-up"
         className="mt-[-30rem] mb-[-33rem] flex flex-col overflow-hidden md:mt-[-22rem] md:mb-[-25rem] lg:mt-[-12rem] lg:mb-[-12rem] xl:mt-[-5rem] xl:mb-[-5rem]"
       >
         <ContainerScroll>
           <div className="relative size-full">
-            <img
-              src={netTaxDostDash}
-              alt="Image"
+            <video
+              autoPlay
+              muted
+              loop
+              src={nettaxDostDash}
               className="size-full object-center"
               draggable={false}
             />
           </div>
         </ContainerScroll>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };
 

@@ -79,7 +79,7 @@ const Blog = () => {
 
   return (
     <main className="pt-[10rem] pb-[4rem] lg:py-[10rem]">
-      <HelmetSeo title="Latest Articles on Law | Nettax Blogs" description="" />
+      <HelmetSeo title="Latest Articles on Law | nettax Blogs" description="" />
 
       {isLoading ? (
         <div className="fixed inset-0 z-[999] flex h-screen w-full items-center justify-center bg-[#ffffff]">
@@ -228,7 +228,7 @@ const Blog = () => {
             <div className="md:w-[60%]">
               <div className="flex flex-col justify-between gap-[2rem]">
                 <h3 className="text-[4rem] leading-[5rem] md:text-[5.6rem] md:leading-[6.4rem]">
-                  Never miss a NetTax post
+                  Never miss a nettax post
                 </h3>
 
                 <p className="text-[1.8rem] leading-[2.4rem] opacity-70 md:text-[2rem] md:leading-[2.8rem]">

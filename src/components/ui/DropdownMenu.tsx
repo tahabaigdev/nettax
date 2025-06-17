@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { ChevronDown, MoveRight } from "lucide-react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 interface DropdownMenuProps {
   label: string;
@@ -27,7 +29,6 @@ const DropdownMenu = ({
     <div
       onMouseEnter={() => setActiveDropdown(true)}
       onMouseLeave={() => setActiveDropdown(false)}
-      className="relative"
     >
       <button
         onClick={handleToggle}
@@ -48,7 +49,7 @@ const DropdownMenu = ({
 
       <div
         className={clsx(
-          "absolute top-[100%] left-[-300%] z-[100] flex transition-all duration-300",
+          "absolute top-[100%] left-1/2 z-[100] flex -translate-x-1/2 transition-all duration-300",
           activeDropdown
             ? "pointer-events-auto visible pt-[1.6rem] opacity-100"
             : "pointer-events-none invisible pt-[0rem] opacity-0",
@@ -60,12 +61,13 @@ const DropdownMenu = ({
               <ul className="grid grid-cols-2 gap-x-[2.4rem] gap-y-[3rem]">
                 {items.map((item, id) => (
                   <li key={id} className="flex flex-col gap-[.8rem]">
-                    <a
-                      href={item.href}
-                      className="text-[1.6rem] font-medium text-(--base-color-01) hover:text-(--primary-color) hover:underline"
+                    <NavHashLink
+                      onClick={() => setActiveDropdown(false)}
+                      smooth
+                      to={item.href}
                     >
                       {item.label}
-                    </a>
+                    </NavHashLink>
 
                     <p className="text-[1.4rem] leading-[2.2rem] font-normal text-(--base-color-01)">
                       {item.description}
@@ -95,14 +97,19 @@ const DropdownMenu = ({
                   {description}
                 </p>
 
-                <a
-                  href={href}
-                  className="mt-[1rem] flex gap-[.8rem] text-[1.5rem] font-medium text-white"
-                >
-                  <span>{label}</span>
+                {label === "Resources" ? (
+                  ""
+                ) : (
+                  <NavLink
+                    to={href}
+                    onClick={() => setActiveDropdown(false)}
+                    className="mt-[1rem] flex gap-[.8rem] text-[1.5rem] font-medium text-white"
+                  >
+                    <span>{label}</span>
 
-                  <MoveRight className="relative top-[.2rem] size-[2.4rem] stroke-1" />
-                </a>
+                    <MoveRight className="relative top-[.2rem] size-[2.4rem] stroke-1" />
+                  </NavLink>
+                )}
               </div>
             </div>
           </div>

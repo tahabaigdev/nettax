@@ -1,39 +1,39 @@
 import DropdownMenu from "./DropdownMenu";
-import Navlink from "./Navlink";
+import NavHashlink from "./NavHashlink";
 
 const Navbar = () => {
   return (
-    <ul className="flex items-center gap-[3rem]">
+    <ul className="relative flex items-center gap-[3rem]">
       <li>
         <DropdownMenu
           label="About Us"
-          description="Planetary problems. Global solutions. Local deployment."
-          image="/images/about-dropdown.webm"
-          href="/"
+          description="Empowering tax professionals with expert-led education and certifications."
+          image="/images/nettax-dost-dropdown.webm"
+          href="/about"
           items={[
             {
               label: "Who We Are",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "We are seasoned tax professionals in Pakistan, dedicated to providing expert guidance and tailored solutions.",
+              href: "/about#who-we-are",
             },
             {
               label: "Our Mission & Vision",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "We empower clients through transparent, personalized tax strategies and dependable support, making compliance simple and stress‑free.",
+              href: "/about#our-mission",
             },
             {
               label: "Our Team",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "Our highly qualified team delivers top-tier legal and client-centered services with professionalism and integrity.",
+              href: "/about#our-team",
             },
             {
               label: "Why Choose Nettax?",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "Choose Nettax for trusted expertise and customized tax solutions tailored to your specific needs.",
+              href: "/about#why-choose-nettax",
             },
           ]}
         />
@@ -42,33 +42,33 @@ const Navbar = () => {
       <li>
         <DropdownMenu
           label="Nettax Dost"
-          description="Planetary problems. Global solutions. Local deployment."
-          href="/"
-          image="/images/nettax-dost-dropdown.webm"
+          description="Your free 24/7 tax assistant—instant answers, zero cost, always reliable."
+          href="/nettax-dost"
+          image="/images/about-dropdown.webm"
           items={[
             {
               label: "About Nettax Dost",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "#dost-section",
+                "Your free tax assistant for quick answers and expert guidance.",
+              href: "/nettax-dost#about-nettax-dost",
             },
             {
-              label: "Nettax Agent",
+              label: "How it Works",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "Create your profile to access courses, tools, and certifications instantly.",
+              href: "/nettax-dost#how-it-work",
             },
             {
-              label: "Account Registration",
+              label: "Who Can Join",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "Certified tax professionals offering personalized filing and compliance solutions.",
+              href: "/nettax-dost#who-can-join",
             },
             {
-              label: "Nettax Agent Locator",
+              label: "Start Earning",
               description:
-                "Unlock the full production potential of your asset, across the entire lifecycle.",
-              href: "/",
+                "Find verified tax agents near you for seamless assistance.",
+              href: "/nettax-dost#start-earning",
             },
           ]}
         />
@@ -77,33 +77,33 @@ const Navbar = () => {
       <li>
         <DropdownMenu
           label="Nettax Guru"
-          description="Planetary problems. Global solutions. Local deployment."
-          href="/"
+          description="Master taxes with expert-led courses and industry-recognized certifications."
+          href="/nettax-guru"
           image="/images/nettax-guru-dropdown.webm"
           items={[
             {
-              label: "Resources",
+              label: "Tax Courses",
               description:
-                "Your go-to knowledge repository for Income Tax information, tailored for both Individuals & Businesses in Pakistan.",
-              href: "/",
+                "Practical tax training from basics to advanced—learn from industry experts.",
+              href: "/nettax-guru#tax-courses",
             },
             {
-              label: "Tax Q&A",
+              label: "Certifications",
               description:
-                "Got tax questions? Start your tax journey with Nettax, and we'll simplify the answers for you.",
-              href: "/",
+                "Earn recognized credentials to boost your tax career and credibility.",
+              href: "/nettax-guru#certifications",
             },
             {
-              label: "Blog",
+              label: "Learning Modes",
               description:
-                "Stay updated with the latest tax insights, news, and expert tips from Nettax.",
-              href: "/",
+                "Flexible learning: self-paced, live classes, or corporate training—your choice.",
+              href: "/nettax-guru#learning-modes",
             },
             {
-              label: "Tools & Calculators",
+              label: "Support",
               description:
-                "Untangle your taxes with our free tools & calculators—easy, efficient, and accurate.",
-              href: "/",
+                "Dedicated help for your tax learning journey—ask us anything!",
+              href: "/nettax-guru#support",
             },
           ]}
         />
@@ -112,56 +112,102 @@ const Navbar = () => {
       <li>
         <DropdownMenu
           label="Our Services"
-          description="Planetary problems. Global solutions. Local deployment."
+          description="End-to-end tax, compliance & business registration solutions—expert-backed and hassle-free."
           image="/images/service-dropdown.webm"
-          href="/"
+          href="/our-services"
           items={[
             {
               label: "NTN Registration",
               description:
-                "A seamless process for obtaining your National Tax Number (NTN), unlocking smoother financial transactions.",
-              href: "/",
+                "We help individuals and businesses get their National Tax Number (NTN) from FBR, which is necessary to file taxes and run legal financial activities in Pakistan.",
+              href: "/our-services#ntn-registration",
             },
             {
-              label: "Income Tax Return",
+              label: "Sales Tax Registration & Returns",
               description:
-                "Accurate and timely filing to avoid penalties and maximize refunds.",
-              href: "/",
-            },
-            {
-              label: "Sales Tax Return & Registration",
-              description:
-                "Efficient handling of sales tax processes to keep your business compliant and penalty-free.",
-              href: "/",
-            },
-            {
-              label: "Trademark & Company Registration",
-              description:
-                "Secure your brand and formalize your business with ease and confidence.",
-              href: "/",
+                "We assist businesses in getting registered for sales tax and filing their monthly returns accurately and on time, helping them stay compliant with FBR rules.",
+              href: "/our-services#income-tax",
             },
             {
               label: "NGO/NPO Registration",
               description:
-                "Supporting your charitable missions with streamlined registration and compliance.",
-              href: "/",
+                "We guide you step by step to register your non-profit organization and help you apply for tax exemptions and legal approvals.",
+              href: "/our-services#sales-tax",
+            },
+            {
+              label: "Income Tax Return Filing",
+              description:
+                "Our experts file your annual income tax return, help with tax planning, and manage your FBR profile to avoid any issues or penalties.",
+              href: "/our-services#trademark-company",
+            },
+            {
+              label: "Trademark & Company Registration",
+              description:
+                "We make it easy for you to register your business and trademark your brand name officially with SECP and IPO Pakistan, protecting your identity legally.",
+              href: "/our-services#ngo-npo",
             },
             {
               label: "Legal Advisory & SECP Compliance",
               description:
-                "Comprehensive legal advisory to meet SECP standards and safeguard your business.",
-              href: "/",
+                "We provide clear legal advice and help your company stay updated with SECP regulations, including all necessary legal filings.",
+              href: "/our-services#legal-advisory",
             },
           ]}
         />
       </li>
 
       <li>
-        <Navlink href="/contact" label="Contact Us" />
+        <DropdownMenu
+          label="Resources"
+          description="Free tools, guides, and templates to simplify tax compliance for you."
+          image="/images/resources-dropdown.webm"
+          href="/"
+          items={[
+            {
+              label: "Blog",
+              description:
+                "Authoritative insights and tax tips to keep you informed",
+              href: "/blog",
+            },
+            {
+              label: "Price List",
+              description: "Transparent service pricing—no hidden fees",
+              href: "/price-list",
+            },
+            {
+              label: "Tax Calculator",
+              description: "User-friendly tool for instant tax estimates",
+              href: "/tax-calculator",
+            },
+            {
+              label: "SRB (Sindh Revenue Board)",
+              description: "Expert assistance with regional tax compliance",
+              href: "https://www.srb.gos.pk/srb/",
+            },
+            {
+              label: "FBR / SECP Services",
+              description:
+                "Step-by-step guides to official registration and filing portals",
+              href: "https://www.secp.gov.pk/",
+            },
+            {
+              label: "PSEB Support",
+              description:
+                "Dedicated help for IT firms seeking PSEB registration",
+              href: "https://techdestination.com/",
+            },
+            {
+              label: "FBR",
+              description:
+                "FBR tax registration, returns, and audit support for individuals/businesses.",
+              href: "https://fbr.gov.pk/",
+            },
+          ]}
+        />
       </li>
 
       <li>
-        <Navlink href="/blog" label="Blog" />
+        <NavHashlink href="/#contact" label="Contact Us" />
       </li>
     </ul>
   );

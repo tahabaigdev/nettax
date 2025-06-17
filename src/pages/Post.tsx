@@ -17,6 +17,7 @@ import { MoonLoader } from "react-spinners";
 import SocialShare from "@/components/ui/SocialShare";
 import SubscribeForm from "@/components/ui/SubscribeForm";
 import HelmetSeo from "@/components/layout/HelmetSeo";
+import { NavHashLink } from "react-router-hash-link";
 
 const Post = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -167,7 +168,11 @@ const Post = () => {
                 Keep up with us
               </h4>
 
-              <Button>Subscribe</Button>
+              <Button asChild>
+                <NavHashLink smooth to="#subscribe-section">
+                  Subscribe
+                </NavHashLink>
+              </Button>
             </div>
 
             <div className="my-[2rem] h-[1px] w-full bg-[#E7EDF6]" />
@@ -242,11 +247,14 @@ const Post = () => {
           </aside>
         </div>
 
-        <div className="my-[4rem] flex flex-col gap-[2rem] border-y border-[#E7EDF6] py-[4rem] md:flex-row md:gap-[4rem]">
+        <div
+          id="subscribe-section"
+          className="my-[4rem] flex flex-col gap-[2rem] border-y border-[#E7EDF6] py-[4rem] md:flex-row md:gap-[4rem]"
+        >
           <div className="md:w-[60%]">
             <div className="flex flex-col justify-between gap-[2rem]">
               <h3 className="text-[4rem] leading-[5rem] md:text-[5.6rem] md:leading-[6.4rem]">
-                Never miss a NetTax post
+                Never miss a nettax post
               </h3>
 
               <p className="text-[1.8rem] leading-[2.4rem] opacity-70 md:text-[2rem] md:leading-[2.8rem]">

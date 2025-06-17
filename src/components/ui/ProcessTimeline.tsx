@@ -1,12 +1,9 @@
 import clsx from "clsx";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-  type Variants,
-} from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { forwardRef, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
+import { useEffect } from "react";
 
 const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
   const { scrollYProgress } = useScroll({
@@ -43,25 +40,9 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
     amount: 0.5,
   });
 
-  // Animation Variants
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // adjust time between each element
-      },
-    },
-  };
-
-  const fadeLeft: Variants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const fadeRight: Variants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
-  };
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
     <div className="relative z-[1]">
@@ -74,10 +55,6 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
 
       <div ref={ref} className="grid gap-[2.4rem] lg:block">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
           ref={step1Ref}
           className="flex gap-[.8rem] lg:flex-col lg:gap-[1rem]"
         >
@@ -99,9 +76,8 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
           <div className="grid-cols-2 gap-[3.2rem] lg:grid xl:gap-[12rem]">
             <div className="hidden lg:block"> </div>
 
-            <motion.div
-              variants={fadeRight}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+            <div
+              data-aos="fade-left"
               className="shadow-04 rounded-[1.6rem] border-[1px] border-[#e4e2e9] bg-[#FAFAFA]"
             >
               <div className="grid gap-[2rem] rounded-[1.6rem] border-[2px] border-white p-[1.6rem] md:gap-[4rem] md:p-[3.2rem]">
@@ -140,15 +116,11 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
                   </li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
           ref={step2Ref}
           className="flex gap-[.8rem] lg:flex-col lg:gap-[1rem]"
         >
@@ -168,9 +140,8 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
           </div>
 
           <div className="grid-cols-2 gap-[3.2rem] lg:grid xl:gap-[12rem]">
-            <motion.div
-              variants={fadeLeft}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+            <div
+              data-aos="fade-right"
               className="shadow-04 rounded-[1.6rem] border-[1px] border-[#e4e2e9] bg-[#FAFAFA]"
             >
               <div className="grid gap-[2rem] rounded-[1.6rem] border-[2px] border-white p-[1.6rem] md:gap-[4rem] md:p-[3.2rem]">
@@ -208,17 +179,13 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
                   </li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             <div className="hidden lg:block"> </div>
           </div>
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
           ref={step3Ref}
           className="flex gap-[.8rem] lg:flex-col lg:gap-[1rem]"
         >
@@ -240,9 +207,8 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
           <div className="grid-cols-2 gap-[3.2rem] lg:grid xl:gap-[12rem]">
             <div className="hidden lg:block"> </div>
 
-            <motion.div
-              variants={fadeRight}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+            <div
+              data-aos="fade-left"
               className="shadow-04 rounded-[1.6rem] border-[1px] border-[#e4e2e9] bg-[#FAFAFA]"
             >
               <div className="grid gap-[2rem] rounded-[1.6rem] border-[2px] border-white p-[1.6rem] md:gap-[4rem] md:p-[3.2rem]">
@@ -280,15 +246,11 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
                   </li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
           ref={step4Ref}
           className="flex gap-[.8rem] lg:flex-col lg:gap-[1rem]"
         >
@@ -308,9 +270,8 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
           </div>
 
           <div className="grid-cols-2 gap-[3.2rem] lg:grid xl:gap-[12rem]">
-            <motion.div
-              variants={fadeLeft}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+            <div
+              data-aos="fade-right"
               className="shadow-04 rounded-[1.6rem] border-[1px] border-[#e4e2e9] bg-[#FAFAFA]"
             >
               <div className="grid gap-[2rem] rounded-[1.6rem] border-[2px] border-white p-[1.6rem] md:gap-[4rem] md:p-[3.2rem]">
@@ -348,17 +309,13 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
                   </li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             <div className="hidden lg:block"> </div>
           </div>
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
           ref={step5Ref}
           className="flex gap-[.8rem] lg:flex-col lg:gap-[1rem]"
         >
@@ -380,9 +337,8 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
           <div className="grid-cols-2 gap-[3.2rem] lg:grid xl:gap-[12rem]">
             <div className="hidden lg:block"> </div>
 
-            <motion.div
-              variants={fadeRight}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+            <div
+              data-aos="fade-left"
               className="shadow-04 rounded-[1.6rem] border-[1px] border-[#e4e2e9] bg-[#FAFAFA]"
             >
               <div className="grid gap-[2rem] rounded-[1.6rem] border-[2px] border-white p-[1.6rem] md:gap-[4rem] md:p-[3.2rem]">
@@ -420,15 +376,11 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
                   </li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
           ref={step6Ref}
           className="flex gap-[.8rem] lg:flex-col lg:gap-[1rem]"
         >
@@ -448,9 +400,8 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
           </div>
 
           <div className="grid-cols-2 gap-[3.2rem] lg:grid xl:gap-[12rem]">
-            <motion.div
-              variants={fadeLeft}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
+            <div
+              data-aos="fade-right"
               className="shadow-04 rounded-[1.6rem] border-[1px] border-[#e4e2e9] bg-[#FAFAFA]"
             >
               <div className="grid gap-[2rem] rounded-[1.6rem] border-[2px] border-white p-[1.6rem] md:gap-[4rem] md:p-[3.2rem]">
@@ -488,7 +439,7 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
                   </li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             <div className="hidden lg:block"> </div>
           </div>

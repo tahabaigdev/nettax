@@ -4,8 +4,8 @@ type MenuState = {
   isMenuOpen: boolean;
   setIsMenuOpen: (value: boolean) => void;
 
-  activeDropdown: boolean;
-  setActiveDropdown: (value: boolean) => void;
+  activeDropdown: string | null;
+  setActiveDropdown: (value: string | null) => void;
 };
 
 export const useMenuStore = create<MenuState>((set) => ({
@@ -14,6 +14,6 @@ export const useMenuStore = create<MenuState>((set) => ({
   setIsMenuOpen: (value) => set({ isMenuOpen: value }),
 
   // Dropdown Menu
-  activeDropdown: false,
+  activeDropdown: null,
   setActiveDropdown: (value) => set({ activeDropdown: value }),
 }));

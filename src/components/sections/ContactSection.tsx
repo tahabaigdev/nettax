@@ -1,31 +1,19 @@
 import { CalendarClock, PhoneOutgoing } from "lucide-react";
 import ContactForm from "../ui/ContactForm";
-import { motion, type Variants } from "framer-motion";
 import bgNoise from "/images/bg-noise.avif";
 import logoIcon from "/images/logo-icon.svg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
+import { useEffect } from "react";
 
 const ContactSection = () => {
-  // Animation Variants
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // adjust time between each element
-      },
-    },
-  };
-
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  };
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
-    <motion.section
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0 }}
+    <section
+      id="contact"
       className="relative overflow-hidden px-[2rem] py-[5rem] lg:py-[7rem] xl:px-[0rem]"
     >
       <div className="absolute top-[.5rem] right-[2rem] lg:top-[2rem] xl:top-[20rem] xl:right-[5rem]">
@@ -36,11 +24,7 @@ const ContactSection = () => {
         <PhoneOutgoing className="size-[2rem] text-(--primary-color) lg:size-[4rem]" />
       </div>
 
-      <motion.div
-        variants={fadeUp}
-        transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-        className="container"
-      >
+      <div className="container">
         <div className="relative z-[1] grid grid-cols-1 items-end gap-[4rem] overflow-hidden rounded-[2.4rem] bg-(--secondary-color) px-[1rem] pt-[3rem] md:px-[4.8rem] lg:grid-cols-2">
           <div className="absolute inset-0 z-[-1] opacity-40">
             <img
@@ -60,11 +44,14 @@ const ContactSection = () => {
 
           <div className="absolute top-[-50rem] right-[-50rem] z-[-1] aspect-[2.5/1] w-[125rem] rounded-[100%] bg-[#5868fb] blur-[17.2rem]"></div>
 
-          <div>
+          <div data-aos="fade-right">
             <ContactForm />
           </div>
 
-          <div className="order-[-1] flex flex-col gap-[2.4rem] pb-[3rem] lg:order-none">
+          <div
+            data-aos="fade-left"
+            className="order-[-1] flex flex-col gap-[2.4rem] pb-[3rem] lg:order-none"
+          >
             <h3 className="text-[3rem] leading-[3.5rem] font-medium tracking-[-2px] text-white md:text-[3.6rem] md:leading-[4.33rem]">
               We&apos;re Here to Help
             </h3>
@@ -75,8 +62,8 @@ const ContactSection = () => {
             </p>
           </div>
         </div>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };
 

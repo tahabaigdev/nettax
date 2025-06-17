@@ -1,13 +1,13 @@
-"use client";
-
 import { useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, MoveRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Swiper as SwiperType } from "swiper"; // Import Swiper type
 import CardSlider from "../ui/CardSlider";
-import { motion, type Variants } from "framer-motion";
 import mark01 from "/images/mark-01.svg";
 import rays03 from "/images/rays-03.svg";
 import highlighter from "/images/highlighter.svg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
+import { useEffect } from "react";
 
 const ServiceSection = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -21,34 +21,12 @@ const ServiceSection = () => {
     }
   };
 
-  // Animation Variants
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // adjust time between each element
-      },
-    },
-  };
-
-  const fadeLeft: Variants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const fadeRight: Variants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
-  };
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
-    <motion.section
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0 }}
-      className="relative z-[1] overflow-hidden bg-[#EEF8FF] px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]"
-    >
+    <section className="relative z-[1] overflow-hidden px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]">
       <div className="absolute bottom-[2rem] left-[70rem] aspect-[1.1/1] w-[3%]">
         <img
           src={mark01}
@@ -60,11 +38,7 @@ const ServiceSection = () => {
       <div className="container">
         <div className="flex flex-col gap-[4rem]">
           <div className="grid grid-cols-1 items-center gap-[4.8rem] lg:grid-cols-2">
-            <motion.div
-              variants={fadeLeft}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-              className="relative"
-            >
+            <div data-aos="fade-right" className="relative">
               <div className="absolute top-[-2rem] right-[3rem] w-[7%] md:right-[15rem] lg:right-[-2rem] xl:right-[1rem]">
                 <img
                   src={rays03}
@@ -84,13 +58,9 @@ const ServiceSection = () => {
               <h3 className="ibm-font text-[3rem] leading-[4rem] font-medium tracking-[-2px] text-(--base-color-01) md:max-w-[60rem] md:text-[4.5rem] md:leading-[6rem]">
                 Strategic Legal Solutions for Individuals and Businesses
               </h3>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={fadeRight}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-              className="flex flex-col gap-[1.6rem]"
-            >
+            <div data-aos="fade-left" className="flex flex-col gap-[1.6rem]">
               <span className="text-[1.4rem] leading-[2.4rem] text-(--base-color-01) md:text-[2rem] md:leading-[2.8rem]">
                 We help you navigate legal matters with confidence and focus.
                 Our approach is straightforward, informed, and built on a clear
@@ -98,14 +68,6 @@ const ServiceSection = () => {
               </span>
 
               <div className="flex items-center justify-between">
-                <a
-                  href="#"
-                  className="flex gap-[.8rem] text-[1.6rem] leading-[2.88rem] font-medium text-(--base-color-01) md:text-[1.8rem]"
-                >
-                  <span>View all services</span>
-                  <MoveRight className="relative top-[3px] size-[2.4rem] stroke-1" />
-                </a>
-
                 <div className="flex items-center gap-[1.2rem]">
                   <button
                     disabled={isBeginning}
@@ -150,7 +112,7 @@ const ServiceSection = () => {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           <div>
@@ -161,7 +123,7 @@ const ServiceSection = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

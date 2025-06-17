@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Checkbox } from "./checkbox";
 import { Input } from "./input";
 import {
   Select,
@@ -28,7 +27,6 @@ const SubscribeForm = () => {
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
   const [message, setMessage] = useState("");
-  const [categories, setCategories] = useState<string[]>([]);
   const [errors, setErrors] = useState<{ email?: string; country?: string }>(
     {},
   );
@@ -44,7 +42,6 @@ const SubscribeForm = () => {
         {
           email,
           country,
-          categories,
         },
       );
 
@@ -90,12 +87,6 @@ const SubscribeForm = () => {
     if (errors.country && value) {
       setErrors((prev) => ({ ...prev, country: undefined }));
     }
-  };
-
-  const handleCheckboxChange = (value: string) => {
-    setCategories((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value],
-    );
   };
 
   return (
@@ -151,35 +142,11 @@ const SubscribeForm = () => {
             <p className="mt-1 text-sm text-red-500">{errors.country}</p>
           )}
         </div>
-
-        {/* Engineering */}
-        <div className="flex items-center gap-[1rem]">
-          <Checkbox
-            id="engineering"
-            checked={categories.includes("Engineering")}
-            onCheckedChange={() => handleCheckboxChange("Engineering")}
-          />
-          <label htmlFor="engineering" className="text-[1.2rem] leading-[2rem]">
-            Engineering
-          </label>
-        </div>
-
-        {/* Company */}
-        <div className="flex items-center gap-[1rem]">
-          <Checkbox
-            id="company"
-            checked={categories.includes("Company")}
-            onCheckedChange={() => handleCheckboxChange("Company")}
-          />
-          <label htmlFor="company" className="text-[1.2rem] leading-[2rem]">
-            Company
-          </label>
-        </div>
       </div>
 
       <p className="my-[2rem] text-[1.2rem] leading-[1.44rem]">
-        By clicking “Subscribe” I understand that I will receive netTax
-        communications, and I agree to netTax processing my personal data in
+        By clicking “Subscribe” I understand that I will receive nettax
+        communications, and I agree to nettax processing my personal data in
         accordance with its <br />
         <a href="" className="hover:underline">
           Privacy Policy

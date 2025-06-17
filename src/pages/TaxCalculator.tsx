@@ -1,5 +1,7 @@
+import HelmetSeo from "@/components/layout/HelmetSeo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import PageHero from "@/components/ui/PageHero";
 import {
   Select,
   SelectContent,
@@ -8,6 +10,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useEffect, useState, type FormEvent } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
 
 const TaxCalculator = () => {
   const [salary, setSalary] = useState<string>("");
@@ -72,73 +76,90 @@ const TaxCalculator = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
-    <section className="pt-[10rem] pb-[4rem] lg:py-[10rem]">
-      <div className="container w-full p-6 md:p-14">
-        <form
-          onSubmit={handleSubmit}
-          className="mb-6 flex w-full flex-col items-end gap-4 lg:flex-row lg:justify-between"
-        >
-          <div className="flex w-full flex-1 flex-col lg:w-1/2">
-            <label className="mb-[.5rem] inline-block text-[1.6rem] leading-[2.4rem]">
-              Select Salary Tax Year
-            </label>
+    <main>
+      <HelmetSeo
+        title="Tax Calculator - Nettax"
+        description="Welcome to the Tax Calculator of Nettax."
+      />
 
-            <Select value={year} onValueChange={(value) => setYear(value)}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select your country" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="2024">2024-2025</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+      <PageHero
+        backgroundImageUrl="/images/page-hero-img-03.avif"
+        heading="Estimate Smart, Plan Ahead, Save Legally"
+        subheading="Quickly calculate your tax liabilities and optimize savings with compliant, strategic insights."
+      />
 
-          <div className="flex w-full flex-1 flex-col lg:w-1/2">
-            <label className="mb-[.5rem] inline-block text-[1.6rem] leading-[2.4rem]">
-              Enter Your Monthly Salary (PKR)
-            </label>
+      <div className="pt-[10rem] pb-[4rem] lg:py-[10rem]">
+        <div data-aos="fade-up" className="container w-full p-6 md:p-14">
+          <form
+            onSubmit={handleSubmit}
+            className="mb-6 flex w-full flex-col items-end gap-4 lg:flex-row lg:justify-between"
+          >
+            <div className="flex w-full flex-1 flex-col lg:w-1/2">
+              <label className="mb-[.5rem] inline-block text-[1.6rem] leading-[2.4rem]">
+                Select Salary Tax Year
+              </label>
 
-            <Input
-              type="text"
-              value={salary}
-              onChange={(e) => setSalary(e.target.value)}
-              className="h-[3.5rem]"
-              placeholder="Enter Your Salary eg(3200)"
-            />
-          </div>
-
-          <div className="mt-6 flex w-full flex-col gap-4 sm:w-fit sm:flex-row">
-            <Button type="submit">Submit Now</Button>
-            <Button type="button" onClick={handleReset}>
-              Reset
-            </Button>
-          </div>
-        </form>
-
-        <div className="flex flex-wrap justify-between rounded-md bg-gray-100 p-6 shadow-md">
-          {[
-            {
-              label: "Monthly Salary",
-              value: parseFloat(salary || "0").toFixed(2),
-            },
-            { label: "Monthly Tax", value: monthlyTax },
-            { label: "Salary After Tax", value: monthlySalaryAfterTax },
-            { label: "Yearly Salary", value: yearlySalary },
-            { label: "Yearly Tax", value: yearlyTax },
-            { label: "Salary After Tax", value: yearlySalaryAfterTax },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="mb-6 w-full text-center sm:w-1/2 md:w-1/3 lg:w-1/6"
-            >
-              <p>{item.label}</p>
-              <p className="mt-2 text-2xl font-semibold">{item.value}</p>
+              <Select value={year} onValueChange={(value) => setYear(value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select your country" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="2024">2024-2025</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
-          ))}
+
+            <div className="flex w-full flex-1 flex-col lg:w-1/2">
+              <label className="mb-[.5rem] inline-block text-[1.6rem] leading-[2.4rem]">
+                Enter Your Monthly Salary (PKR)
+              </label>
+
+              <Input
+                type="text"
+                value={salary}
+                onChange={(e) => setSalary(e.target.value)}
+                className="h-[3.5rem]"
+                placeholder="Enter Your Salary eg(3200)"
+              />
+            </div>
+
+            <div className="mt-6 flex w-full flex-col gap-4 sm:w-fit sm:flex-row">
+              <Button type="submit">Submit Now</Button>
+              <Button type="button" onClick={handleReset}>
+                Reset
+              </Button>
+            </div>
+          </form>
+
+          <div className="flex flex-wrap justify-between rounded-md bg-[#FAF8F5] p-6 shadow-md">
+            {[
+              {
+                label: "Monthly Salary",
+                value: parseFloat(salary || "0").toFixed(2),
+              },
+              { label: "Monthly Tax", value: monthlyTax },
+              { label: "Salary After Tax", value: monthlySalaryAfterTax },
+              { label: "Yearly Salary", value: yearlySalary },
+              { label: "Yearly Tax", value: yearlyTax },
+              { label: "Salary After Tax", value: yearlySalaryAfterTax },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="mb-6 w-full text-center sm:w-1/2 md:w-1/3 lg:w-1/6"
+              >
+                <p>{item.label}</p>
+                <p className="mt-2 text-2xl font-semibold">{item.value}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

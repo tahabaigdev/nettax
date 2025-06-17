@@ -1,7 +1,4 @@
-"use client";
-
-import { motion, type Variants } from "framer-motion";
-import { IdCard, MonitorCog, MoveRight } from "lucide-react";
+import { IdCard, MonitorCog } from "lucide-react";
 import partnerLogo1 from "/images/partner-logo-1.svg";
 import partnerLogo2 from "/images/partner-logo-2.svg";
 import partnerLogo3 from "/images/partner-logo-3.svg";
@@ -9,6 +6,9 @@ import partnerLogo4 from "/images/partner-logo-4.svg";
 import partnerLogo5 from "/images/partner-logo-5.svg";
 import rays03 from "/images/rays-03.svg";
 import blueHighlight03 from "/images/blue-highlight-bold-03.svg";
+import AOS from "aos";
+import "aos/dist/aos.css"; // ✅ Add this
+import { useEffect } from "react";
 
 const linkItem = [
   { id: 0, link: "", img: partnerLogo1 },
@@ -47,39 +47,12 @@ const linkItem = [
 // ];
 
 const PartnerSection = () => {
-  // Animation Variants
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // adjust time between each element
-      },
-    },
-  };
-
-  const fadeLeft: Variants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const fadeRight: Variants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  };
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
-    <motion.section
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0 }}
-      className="relative z-[1] overflow-hidden px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]"
-    >
+    <section className="relative z-[1] overflow-hidden px-[2rem] py-[5rem] lg:py-[9.6rem] xl:px-[0rem]">
       <div className="absolute top-[40rem] left-[5rem] z-[-1] hidden rotate-12 xl:block">
         <MonitorCog className="size-[2rem] text-(--primary-color) md:size-[4rem]" />
       </div>
@@ -90,12 +63,8 @@ const PartnerSection = () => {
 
       <div className="container">
         <div className="grid gap-[4rem]">
-          <div className="grid grid-cols-1 items-center gap-[2rem] md:gap-[4.8rem] lg:grid-cols-2">
-            <motion.div
-              variants={fadeLeft}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-              className="relative"
-            >
+          <div className="grid grid-cols-1 items-end gap-[2rem] md:gap-[4.8rem] lg:grid-cols-2">
+            <div data-aos="fade-right" className="relative">
               <div className="absolute top-[-2rem] right-[7rem] w-[7%] md:right-[12rem] lg:right-[-2rem] xl:right-[-2rem]">
                 <img
                   src={rays03}
@@ -115,37 +84,19 @@ const PartnerSection = () => {
               <h3 className="ibm-font max-w-[30rem] text-[3rem] leading-[4rem] font-medium tracking-[-2px] text-(--base-color-01) md:max-w-[60rem] md:text-[4.5rem] md:leading-[6rem]">
                 Trusted Partners Built on trust and expertise.
               </h3>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={fadeRight}
-              transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-              className="flex flex-col gap-[1.6rem]"
-            >
+            <div data-aos="fade-left" className="flex flex-col gap-[1.6rem]">
               <span className="text-[1.4rem] leading-[2.4rem] text-(--base-color-01) md:text-[2rem] md:leading-[2.8rem]">
-                We work alongside respected professionals who share our
+                We work alongside respected organizations who share our
                 commitment to clarity, integrity, and results.
               </span>
-
-              <div>
-                <a
-                  href="#"
-                  className="flex gap-[.8rem] text-[1.6rem] leading-[2.88rem] font-medium text-(--base-color-01) md:text-[1.8rem]"
-                >
-                  <span>View all</span>
-                  <MoveRight className="relative top-[3px] size-[2.4rem] stroke-1" />
-                </a>
-              </div>
-            </motion.div>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-[2.4rem] md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
             {linkItem.map((item) => (
-              <motion.div
-                variants={fadeUp}
-                transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-                key={item.id}
-              >
+              <div data-aos="fade-up" key={item.id}>
                 <a
                   href=""
                   className="shadow-02 flex aspect-[1/1] size-full items-center justify-center rounded-[1.2rem] border border-[#d4e0ed] bg-white transition-all duration-300 hover:scale-[1.125] hover:border-(--primary-color) hover:bg-[#f4f8ff]"
@@ -156,7 +107,7 @@ const PartnerSection = () => {
                     className="h-[4rem] object-contain object-center"
                   />
                 </a>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -192,7 +143,7 @@ const PartnerSection = () => {
           ))}
         </div> */}
       </div>
-    </motion.section>
+    </section>
   );
 };
 

@@ -58,7 +58,7 @@ const Header = () => {
           <Navbar />
         </div>
 
-        <div className="hidden items-center gap-[2rem] xl:flex">
+        <div className="pointer-events-none hidden items-center gap-[2rem] opacity-0 xl:flex">
           <Button asChild variant="transparent">
             <a href="/">Login</a>
           </Button>
