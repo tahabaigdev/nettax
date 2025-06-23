@@ -7,10 +7,10 @@ import {
   Scale,
 } from "lucide-react";
 import TabSlider from "../ui/TabSlider";
-import featureImg01 from "/images/feature-img-01.webp";
-import featureImg02 from "/images/feature-img-02.webp";
-import featureImg03 from "/images/feature-img-03.webp";
-import featureImg04 from "/images/feature-img-04.webp";
+import featureImg01 from "/images/feature-img-01.avif";
+import featureImg02 from "/images/feature-img-02.avif";
+import featureImg03 from "/images/feature-img-03.avif";
+import featureImg04 from "/images/feature-img-04.avif";
 
 const features = [
   { label: "Fast, Hassle-Free Service", icon: CircleFadingArrowUp },
