@@ -4,40 +4,39 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
-// Show errors (for dev only)
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// DB credentials
+// DB config
 $host = "localhost";
-$dbname = "tahayjjb_nettax"; // ✅ replace this
-$username = "tahayjjb_nettax-admin";     // ✅ replace this
-$password = "A:&7@WrZ72grd"; // ✅ replace this
+$dbname = "tahayjjb_nettax";
+$username = "tahayjjb_nettax-admin";
+$password = "A:&7@WrZ72grd";
 
-// Connect to DB
+// Connect
 $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
-  echo json_encode(["message" => "Database connection failed"]);
+  echo json_encode(["message" => "❌ Database connection failed"]);
   exit;
 }
 
-// Read data
-$email = $_POST['email'] ?? '';
-$country = $_POST['country'] ?? '';
+// ✅ Decode JSON
+$input = json_decode(file_get_contents("php://input"), true);
+$email = $input['email'] ?? '';
+$country = $input['country'] ?? '';
 $subscribed_at = date("Y-m-d H:i:s");
 
-// Validate
 if (!$email || !$country) {
-  echo json_encode(["message" => "Missing fields"]);
+  echo json_encode(["message" => "❌ Missing fields"]);
   exit;
 }
 
-// Insert into DB
+// Insert
 $stmt = $conn->prepare("INSERT INTO subscribers (email, country, subscribed_at) VALUES (?, ?, ?)");
 $stmt->bind_param("sss", $email, $country, $subscribed_at);
 
 if ($stmt->execute()) {
-  // ✅ Send thank-you email
+  // ✅ Email
   $to = $email;
   $subject = "Thank You for Subscribing!";
   $headers = "From: Nettax <no-reply@nettax.org>\r\n";
@@ -47,7 +46,7 @@ if ($stmt->execute()) {
     <html>
       <body>
         <h2>Thank you for subscribing!</h2>
-        <p>We're glad to have you with us. Stay tuned for updates from Nettax.</p>
+        <p>We’re glad to have you with us. Stay tuned for updates from Nettax.</p>
         <p>Country: <strong>$country</strong></p>
         <br />
         <p>Regards,<br />Nettax Team</p>
@@ -57,9 +56,9 @@ if ($stmt->execute()) {
 
   mail($to, $subject, $message, $headers);
 
-  echo json_encode(["message" => "You are subscribed successfully!"]);
+  echo json_encode(["message" => "✅ You are subscribed successfully!"]);
 } else {
-  echo json_encode(["message" => "Subscription failed."]);
+  echo json_encode(["message" => "❌ Subscription failed: " . $stmt->error]);
 }
 
 $stmt->close();
