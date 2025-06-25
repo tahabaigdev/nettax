@@ -159,7 +159,7 @@ const TabSlider: React.FC<TabSliderProps> = ({
                 <motion.img
                   key={slides[selectedIndex].img}
                   src={slides[selectedIndex].img}
-                  alt="Slide Image"
+                  alt="Online tax filing and NTN registration service in Hyderabad, Sindh, Pakistan"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}

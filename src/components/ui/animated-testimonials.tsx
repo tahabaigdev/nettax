@@ -9,6 +9,7 @@ import "aos/dist/aos.css"; // ✅ Add this
 type Testimonial = {
   quote: string;
   name: string;
+  alt: string;
   designation: string;
   src: string;
 };
@@ -88,7 +89,7 @@ export const AnimatedTestimonials = ({
                 >
                   <img
                     src={testimonial.src}
-                    alt={testimonial.name}
+                    alt={testimonial.alt}
                     draggable={false}
                     className="h-full w-full rounded-3xl object-cover object-top"
                   />

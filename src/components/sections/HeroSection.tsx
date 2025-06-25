@@ -85,7 +85,10 @@ const HeroSection = () => {
               Your <TypewriterEffectSmooth words={words} />
             </h1>
 
-            <p className="mt-[2.4rem] text-[1.6rem] leading-[2.4rem] text-(--base-color-01) md:text-[2rem] md:leading-[3.6rem]"></p>
+            <p className="mt-[2.4rem] text-[1.6rem] leading-[2.4rem] text-(--base-color-01) md:text-[2rem] md:leading-[3.6rem]">
+              Your tax journey made simple with nettax. Quick, reliable, and
+              stress-free from start to finish.
+            </p>
 
             <div className="mt-[3.2rem] flex items-center gap-[2rem]">
               <div className="flex flex-row items-center">
@@ -126,7 +129,7 @@ const HeroSection = () => {
               <div className="absolute top-0 right-[13rem] aspect-[.8/1] w-[28%] overflow-hidden rounded-[.8rem] md:right-0 md:w-[53%]">
                 <img
                   src={heroImg01}
-                  alt="Hero Bg"
+                  alt="Professional Pakistani tax consultant helping clients with tax filing"
                   className="size-full object-center"
                 />
               </div>
@@ -134,7 +137,7 @@ const HeroSection = () => {
               <div className="shadow-05 absolute bottom-[9.4rem] left-[13rem] aspect-[1/1] w-[28%] rounded-[.8rem] md:left-0 md:w-[44%]">
                 <img
                   src={heroImg02}
-                  alt="Hero Bg"
+                  alt="Income tax calculator visual with stacked documents for tax planning"
                   className="object-cover object-center"
                 />
 
