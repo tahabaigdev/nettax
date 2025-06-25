@@ -1,6 +1,9 @@
 <?php
-header("Access-Control-Allow-Origin: *"); // For development — limit in production
-header("Content-Type: application/json");
+// Enable CORS for all origins (for development)
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json"); // Important for JSON or API-style responses
 
 // Database credentials
 $host = "localhost";
