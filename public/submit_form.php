@@ -1,12 +1,9 @@
 <?php
+// Enable CORS for all origins (for development)
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json");
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+header("Content-Type: application/json"); // Important for JSON or API-style responses
 
 // Database credentials
 $host = "localhost";
@@ -32,7 +29,7 @@ $topics = $_POST['topics'] ?? '';
 $submitted_at = date("Y-m-d H:i:s");
 
 // Prepare SQL query
-$stmt = $conn->prepare("INSERT INTO your_table_name (fullname, email, query, topics, submitted_at) VALUES (?, ?, ?, ?, ?)"); // ✅ change `your_table_name`
+$stmt = $conn->prepare("INSERT INTO contacts (fullname, email, query, topics, submitted_at) VALUES (?, ?, ?, ?, ?)"); // ✅ change `your_table_name`
 $stmt->bind_param("sssss", $fullname, $email, $query, $topics, $submitted_at);
 
 if ($stmt->execute()) {
