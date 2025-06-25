@@ -85,10 +85,7 @@ const HeroSection = () => {
               Your <TypewriterEffectSmooth words={words} />
             </h1>
 
-            <p className="mt-[2.4rem] text-[1.6rem] leading-[2.4rem] text-(--base-color-01) md:text-[2rem] md:leading-[3.6rem]">
-              Your tax journey made simple with nettax. Quick, reliable, and
-              stress-free from start to finish.
-            </p>
+            <p className="mt-[2.4rem] text-[1.6rem] leading-[2.4rem] text-(--base-color-01) md:text-[2rem] md:leading-[3.6rem]"></p>
 
             <div className="mt-[3.2rem] flex items-center gap-[2rem]">
               <div className="flex flex-row items-center">
