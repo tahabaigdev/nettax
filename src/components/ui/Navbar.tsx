@@ -167,7 +167,7 @@ const Navbar = () => {
               label: "Blog",
               description:
                 "Authoritative insights and tax tips to keep you informed",
-              href: "/blogs",
+              href: "/blog",
             },
             {
               label: "Price List",

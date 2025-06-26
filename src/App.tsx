@@ -27,8 +27,8 @@ const App = () => {
         <Route path="/price-list" element={<PriceList />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-condition" element={<TermsAndCondition />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/blogs/:slug" element={<Post />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<Post />} />
       </Routes>
       <Footer />
     </>
