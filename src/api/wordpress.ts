@@ -1,7 +1,7 @@
 // src/api/wordpress.ts
 import axios from "axios";
 
-const WP_BASE_URL = "https://www.nettax.org/blogs/wp-json/wp/v2";
+const WP_BASE_URL = "https://www.nettax.org/wp-blogs/wp-json/wp/v2";
 
 export const getPosts = async (page = 1, perPage = 10) => {
   const res = await axios.get(`${WP_BASE_URL}/posts`, {
