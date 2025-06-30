@@ -33,8 +33,8 @@ const Home = () => {
   return (
     <main>
       <HelmetSeo
-        title="Home - Nettax"
-        description="Welcome to the homepage of Nettax."
+        title="Online NTN Verification & Filer Status Check – Nettax Pakistan"
+        description=":Need to check FBR filer status or verify your NTN number online? Use Nettax to access e registration, filer check, and active taxpayer status in Pakistan."
       />
 
       <HeroSection />

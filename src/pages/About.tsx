@@ -32,8 +32,8 @@ const About = () => {
   return (
     <main>
       <HelmetSeo
-        title="About Us - nettax"
-        description="Welcome to the About of nettax."
+        title="About Nettax – Trusted Tax Experts Behind Dost & Guru"
+        description="Discover how Nettax simplifies FBR registration, filer status, and tax education in Pakistan through expert-led services like Nettax Dost & Nettax Guru."
       />
 
       <PageHero
