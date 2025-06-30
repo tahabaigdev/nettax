@@ -1,4 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /wp-blogs/
+Disallow: /wp/
+Allow: /wp-json/        # Keep API accessible
 
 Sitemap: https://nettax.org/sitemap.xml
