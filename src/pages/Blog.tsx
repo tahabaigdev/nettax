@@ -79,7 +79,10 @@ const Blog = () => {
 
   return (
     <main className="pt-[10rem] pb-[4rem] lg:py-[10rem]">
-      <HelmetSeo title="Latest Articles on Law | nettax Blogs" description="" />
+      <HelmetSeo
+        title="Latest FBR & Tax Consultancy Article | Nettax"
+        description="Stay updated with FBR tax news, e-payment guides, registration "
+      />
 
       {isLoading ? (
         <div className="fixed inset-0 z-[999] flex h-screen w-full items-center justify-center bg-[#ffffff]">

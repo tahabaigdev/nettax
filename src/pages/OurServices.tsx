@@ -39,8 +39,8 @@ const OurServices = () => {
   return (
     <main>
       <HelmetSeo
-        title="Our Services - nettax"
-        description="Welcome to the Services of nettax."
+        title="FBR Online Verification & NTN Services | Nettax Pakistan"
+        description="Access FBR online verification, NTN search, and tax services in one place. NetTax Pakistan offers fast, secure, and accurate FBR verification solutions."
       />
 
       <PageHero
