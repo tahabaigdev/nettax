@@ -32,8 +32,8 @@ const About = () => {
   return (
     <main>
       <HelmetSeo
-        title="About Nettax – Trusted Tax Experts Behind Dost & Guru"
-        description="Discover how Nettax simplifies FBR registration, filer status, and tax education in Pakistan through expert-led services like Nettax Dost & Nettax Guru."
+        title="Why Choose Nettax | Trusted FBR Tax Consultants in Pakistan"
+        description="Nettax is Pakistan’s trusted FBR partner for NTN checks, tax returns & eFBR updates. Discover why thousands trust our expert tax consultants & services."
       />
 
       <PageHero
