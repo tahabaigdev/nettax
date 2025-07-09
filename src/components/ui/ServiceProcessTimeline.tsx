@@ -49,16 +49,35 @@ const ServiceProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
       heading: "NTN Registration",
       points: [
         {
-          title: "",
-          content: "Personal & Business NTN Registration",
+          title: "What is NTN?",
+          content:
+            "NTN (National Tax Number) is a unique identification number issued by the Federal Board of Revenue (FBR) to individuals and  businesses for taxation purposes in Pakistan. Think of it as a tax identity that allows a person or entity to interact legally with the tax system.",
         },
         {
-          title: "",
-          content: "Guidance on Required Documents",
+          title: "Legal Requirement",
+          content:
+            "Under Section 181 of the Income Tax Ordinance, 2001, every person who earns taxable income or conducts taxable transactions must register with FBR and obtain an NTN.",
         },
         {
-          title: "",
-          content: "FBR Profile Creation & Verification",
+          title: "Who Needs It?",
+          content: (
+            <ul className="list-inside list-disc">
+              {[
+                "Salaried persons earning taxable income",
+                "Freelancers and service providers",
+                "Business owners (sole proprietors, partnerships, companies)",
+                "Importers/exporters",
+                "Professionals like doctors, lawyers, consultants",
+              ].map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          ),
+        },
+        {
+          title: "How NETTAX Helps",
+          content:
+            "NETTAX streamlines the NTN registration process by collecting basic information (CNIC, address, source of income), preparing the application, and submitting it to FBR. We ensure proper documentation and help you access your IRIS portal, which is the official FBR platform for tax matters.",
         },
       ],
       reverse: false,
@@ -71,16 +90,40 @@ const ServiceProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
       heading: "Sales Tax Return & Registration",
       points: [
         {
-          title: "",
-          content: "Sales Tax Registration with FBR",
+          title: "What is Sales Tax?",
+          content:
+            "Sales tax is an indirect tax imposed on the sale and purchase of goods and certain services in Pakistan. The registered seller collects it from the buyer and deposits it with the FBR.",
         },
         {
-          title: "",
-          content: "Monthly Return Filing",
+          title: "Legal Framework",
+          content:
+            "Governed by the Sales Tax Act, 1990, businesses with a taxable turnover exceeding the threshold (e.g. Rs. 10 million) must register for sales tax",
         },
         {
-          title: "",
-          content: "Record Maintenance & Audit Support",
+          title: "Sales Tax Return",
+          content: (
+            <div>
+              <p className="mb-[1rem]">
+                A sales tax return is a monthly statement filed with FBR that
+                reports:
+              </p>
+
+              <ul className="list-inside list-disc">
+                {[
+                  "Output tax (tax collected on sales)",
+                  "Input tax (tax paid on purchases)",
+                  "Net payable/refundable amount",
+                ].map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ),
+        },
+        {
+          title: "How NETTAX Helps",
+          content:
+            "NETTAX handles complete sales tax registration with FBR, applies for STRN (Sales Tax Registration Number), and files accurate monthly returns. We maintain records, match purchases/sales, and ensure clients stay compliant and penalty-free.",
         },
       ],
       reverse: true,
@@ -93,16 +136,52 @@ const ServiceProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
       heading: "NGO/NPO Registration",
       points: [
         {
-          title: "",
-          content: "Trust, Society, or Section 42 Company Registration",
+          title: "What is an NGO/NPO?",
+          content:
+            "An NGO (Non-Governmental Organization) or NPO (Non-Profit Organization) is formed for charitable, educational, religious, or public welfare purposes without the intention of earning profit.",
         },
         {
-          title: "",
-          content: "Documentation & Legal Structure Advice",
+          title: "Legal Options for Registration",
+          content: (
+            <>
+              <p className="mb-[1rem]">
+                Depending on the structure and objective, NGOs can be registered
+                under:
+              </p>
+
+              <ul className="list-inside list-disc">
+                {[
+                  "Societies Registration Act, 1860",
+                  "Trust Act, 1882",
+                  "Section 42 of the Companies Act, 2017 (SECP)",
+                  "Voluntary Social Welfare Agencies (Registration and Control) Ordinance, 1961",
+                ].map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </>
+          ),
         },
         {
-          title: "",
-          content: "Tax Exemption Certificate Assistance",
+          title:
+            "Voluntary Social Welfare Agencies (Registration and Control) Ordinance, 1961",
+          content: (
+            <ul className="list-inside list-disc">
+              {[
+                "Establishes legal identity",
+                "Enables opening of bank accounts",
+                "Helps apply for tax exemptions under Section 2(36) and 100C of the Income Tax Ordinance",
+                "Builds trust with donors and regulatory bodies",
+              ].map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          ),
+        },
+        {
+          title: "How NETTAX Helps",
+          content:
+            "NETTAX provides end-to-end legal consultation for the appropriate registration route, prepares your constitution/MoA/Bylaws, and gets your organization registered with SECP or other relevant bodies. We also help you apply for tax exemption certificates and comply with FBR and SECP regulations.",
         },
       ],
       reverse: false,
@@ -112,19 +191,47 @@ const ServiceProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
       ref: step4Ref,
       inView: inView4,
       hash: "income-tax",
-      heading: "Income Tax Return",
+      heading: "Income Tax Return Filing",
       points: [
         {
-          title: "",
-          content: "Individual, Business, and Corporate Returns",
+          title: "What is an Income Tax Return?",
+          content:
+            "An income tax return (ITR) is a statement of your total annual income, deductions, and taxes paid, filed with FBR under the Income Tax Ordinance, 2001.",
         },
         {
-          title: "",
-          content: "Tax Planning & Consultation",
+          title: "Who is Required to File?",
+          content: (
+            <ul className="list-inside list-disc">
+              {[
+                "Individuals earning taxable income (salary, business, rent, capital gains)",
+                "Companies and AOPs",
+                "Freelancers and professionals",
+                "Non-residents with Pakistan-source income",
+              ].map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          ),
         },
         {
-          title: "",
-          content: "Wealth Statements & FBR Profile Updates",
+          title: "Why It’s Important",
+          content: (
+            <ul className="list-inside list-disc">
+              {[
+                "Avoid penalties and notices from FBR",
+                "Get included in the Active Taxpayer List (ATL)",
+                "Claim refunds or exemptions",
+                "Show proof of income for bank loans, visas, or government contracts",
+              ].map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          ),
+        },
+        {
+          title: " How NETTAX Helps",
+          content:
+            "We collect your income documents (salary slips, profit & loss accounts, bank statements), prepare your tax file, and submit it via IRIS. NETTAX also helps with tax planning, minimizing liabilities, and maintaining your FBR profile.",
         },
       ],
       reverse: true,
@@ -137,16 +244,54 @@ const ServiceProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
       heading: "Trademark & Company Registration",
       points: [
         {
-          title: "",
-          content: "Trademark Search & Registration",
+          title: "Trademark Registration",
+          content:
+            "A trademark protects your brand name, logo, or slogan from unauthorized use. It’s registered under the Trade Marks Ordinance, 2001 through IPO Pakistan.",
         },
         {
-          title: "",
-          content: "Private Limited & Sole Proprietor Company Registration",
+          title: "Why It Matters",
+          content: (
+            <ul className="list-inside list-disc">
+              {[
+                "Secures your brand identity",
+                "Grants exclusive usage rights",
+                "Enhances business credibility and valuation",
+                "Legal protection against counterfeit or infringement",
+              ].map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          ),
         },
         {
-          title: "",
-          content: "SECP Filing & Documentation",
+          title: "Company Registration",
+          content: (
+            <>
+              <p className="mb-[1rem]">
+                Company registration under SECP legally creates a separate
+                business entity. This includes:
+              </p>
+
+              <ul className="list-inside list-disc">
+                {[
+                  "Private Limited Company",
+                  "Single Member Company (SMC)",
+                  "Public Limited Company",
+                ].map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+
+              <p className="mt-[1rem]">
+                Registration is governed by the Companies Act, 2017.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: "How NETTAX Helps",
+          content:
+            "NETTAX assists you in name reservation, document drafting, digital signatures, SECP filings, and IPO applications. We also help you understand whether sole proprietorship or Pvt. Ltd. suits your business goals best.",
         },
       ],
       reverse: false,
@@ -159,16 +304,56 @@ const ServiceProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
       heading: "Legal Advisory & SECP Compliance",
       points: [
         {
-          title: "",
-          content: "Company Law Advisory",
+          title: "What is SECP Compliance?",
+          content: (
+            <>
+              <p className="mb-[1rem]">
+                Once registered, companies are legally required to comply with
+                regulations set by the Securities and Exchange Commission of
+                Pakistan (SECP). These include:
+              </p>
+
+              <ul className="list-inside list-disc">
+                {[
+                  "Annual returns",
+                  "Appointment/resignation of directors",
+                  "Changes in capital or structure",
+                  "Resolutions and disclosures",
+                ].map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+
+              <p className="mb-[1rem]">
+                Non-compliance can lead to penalties, suspension, or legal
+                actions.
+              </p>
+            </>
+          ),
         },
         {
-          title: "",
-          content: "Annual Filing & Compliance with SECP",
+          title: "Role of Legal Advisory",
+          content: (
+            <>
+              <p className="mb-[1rem]">Legal advisory ensures businesses:</p>
+
+              <ul className="list-inside list-disc">
+                {[
+                  "Understand corporate laws",
+                  "Remain updated with amendments",
+                  "Follow lawful procedures in growth and governance",
+                  "Protect their directors and stakeholders from legal risks",
+                ].map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </>
+          ),
         },
         {
-          title: "",
-          content: "Corporate Governance & Regulatory Updates",
+          title: "How NETTAX Helps",
+          content:
+            "NETTAX offers dedicated legal support for SECP filings, compliance audits, legal notices, and structural updates. We maintain your legal record and help your company remain active, transparent, and risk-free.",
         },
       ],
       reverse: true,
@@ -231,7 +416,7 @@ const ServiceProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
                     {step.points.map((point, pointIdx) => (
                       <li
                         key={pointIdx}
-                        className="text-[1.6rem] leading-[2.56rem] font-normal tracking-[-0.16px] text-(--base-color-01)"
+                        className="flex flex-col gap-[1rem] text-[1.6rem] leading-[2.56rem] font-normal tracking-[-0.16px] text-(--base-color-01)"
                       >
                         <strong className="leading-[2.16rem] font-medium text-black md:text-[1.8rem]">
                           {point.title}

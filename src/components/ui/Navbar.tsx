@@ -119,37 +119,37 @@ const Navbar = () => {
             {
               label: "NTN Registration",
               description:
-                "We help individuals and businesses get their National Tax Number (NTN) from FBR, which is necessary to file taxes and run legal financial activities in Pakistan.",
+                "National Tax Number (NTN) is a unique ID issued by FBR for tax-related matters in Pakistan.",
               href: "/our-services#ntn-registration",
             },
             {
               label: "Sales Tax Registration & Returns",
               description:
-                "We assist businesses in getting registered for sales tax and filing their monthly returns accurately and on time, helping them stay compliant with FBR rules.",
+                "Sales tax registration enables businesses to legally collect and submit sales tax to FBR.",
               href: "/our-services#income-tax",
             },
             {
               label: "NGO/NPO Registration",
               description:
-                "We guide you step by step to register your non-profit organization and help you apply for tax exemptions and legal approvals.",
+                "NGO/NPO registration is the legal process of establishing a non-profit organization under government regulations.",
               href: "/our-services#sales-tax",
             },
             {
               label: "Income Tax Return Filing",
               description:
-                "Our experts file your annual income tax return, help with tax planning, and manage your FBR profile to avoid any issues or penalties.",
+                "Income tax return filing is the annual submission of income details to FBR for tax calculation.",
               href: "/our-services#trademark-company",
             },
             {
               label: "Trademark & Company Registration",
               description:
-                "We make it easy for you to register your business and trademark your brand name officially with SECP and IPO Pakistan, protecting your identity legally.",
+                "Trademark and company registration are legal processes to protect brand identity and establish a business entity",
               href: "/our-services#ngo-npo",
             },
             {
               label: "Legal Advisory & SECP Compliance",
               description:
-                "We provide clear legal advice and help your company stay updated with SECP regulations, including all necessary legal filings.",
+                "SECP compliance ensures a company meets legal requirements set by the Securities and Exchange Commission of Pakistan.",
               href: "/our-services#legal-advisory",
             },
           ]}
