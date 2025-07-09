@@ -81,7 +81,8 @@ const Blog = () => {
     <main className="pt-[10rem] pb-[4rem] lg:py-[10rem]">
       <HelmetSeo
         title="Latest FBR & Tax Consultancy Article | Nettax"
-        description="Stay updated with FBR tax news, e-payment guides, registration "
+        description="Stay updated with FBR tax news, e-payment guides, registration"
+        url="https://www.nettax.org/nettax.org/blog"
       />
 
       {isLoading ? (

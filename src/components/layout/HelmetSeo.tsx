@@ -19,6 +19,9 @@ const HelmetSeo: React.FC<HelmetSeoProps> = ({
       <title>{title}</title>
       <meta name="description" content={description} />
 
+      {/* Canonical */}
+      {url && <link rel="canonical" href={url} />}
+
       {/* OpenGraph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

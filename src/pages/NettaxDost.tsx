@@ -12,6 +12,7 @@ const NettaxDost = () => {
       <HelmetSeo
         title="FBR Registration & Online NTN Check – Nettax Dost"
         description="NetTax Dost helps you register with FBR and check your NTN online with ease. Fast, secure, and simplified tax solutions — trusted by thousands in Pakistan."
+        url="https://www.nettax.org/nettax.org/nettax-dost"
       />
 
       <NettaxDostHero />

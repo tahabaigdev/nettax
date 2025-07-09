@@ -10,6 +10,7 @@ const TermsAndCondition = () => {
       <HelmetSeo
         title="Terms and Condition - nettax"
         description="Welcome to the Terms and Condition of nettax."
+        url="https://www.nettax.org/nettax.org/terms-condition"
       />
       <div className="container flex flex-col gap-[2rem] rounded-[1.2rem] border border-[#cacaca] p-[2rem]">
         <div className="flex flex-col gap-[1rem]">

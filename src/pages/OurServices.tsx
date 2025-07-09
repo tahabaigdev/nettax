@@ -41,6 +41,7 @@ const OurServices = () => {
       <HelmetSeo
         title="FBR Online Verification & NTN Services | Nettax Services"
         description="Access FBR online verification, NTN search, and tax services in one place. NetTax Pakistan offers fast, secure, and accurate FBR verification solutions."
+        url="https://www.nettax.org/nettax.org/our-services"
       />
 
       <PageHero
