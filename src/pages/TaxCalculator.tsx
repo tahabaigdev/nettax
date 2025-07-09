@@ -83,8 +83,8 @@ const TaxCalculator = () => {
   return (
     <main>
       <HelmetSeo
-        title="Tax Calculator - Nettax"
-        description="Welcome to the Tax Calculator of Nettax."
+        title="Salary Tax Calculator | FBR NTN Verification Tool"
+        description="Use Nettax Dost to calculate your salary tax in Pakistan. Check FBR NTN, eFBR status & verify tax info easily. Fast, accurate & trusted by tax experts."
       />
 
       <PageHero

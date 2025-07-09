@@ -9,7 +9,7 @@ const NettaxGuru = () => {
   return (
     <main>
       <HelmetSeo
-        title="IRIS FBR Tax Return Filing | Become a Filer in Pakistan"
+        title="FBR Tax Return Filing | Become a Filer - Nettax"
         description="E-file your FBR tax return with Nettax Guru. Learn how to become a filer in Pakistan using IRIS FBR system. Simple, secure, and guided filing—start now!"
       />
 
