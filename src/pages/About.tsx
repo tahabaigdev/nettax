@@ -34,7 +34,7 @@ const About = () => {
       <HelmetSeo
         title="About Nettax – FBR Online Verification & Filer Check Experts"
         description="Learn about Nettax, your trusted partner for FBR online verification filer status check, and tax consultancy in Pakistan. Experience reliable tax solutions."
-        url="https://www.nettax.org/nettax.org/about"
+        url="https://www.nettax.org/about"
       />
 
       <PageHero

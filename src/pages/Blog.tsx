@@ -82,7 +82,7 @@ const Blog = () => {
       <HelmetSeo
         title="Latest FBR & Tax Consultancy Article | Nettax"
         description="Stay updated with FBR tax news, e-payment guides, registration"
-        url="https://www.nettax.org/nettax.org/blog"
+        url="https://www.nettax.org/blog"
       />
 
       {isLoading ? (
