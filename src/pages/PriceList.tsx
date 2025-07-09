@@ -11,8 +11,8 @@ const PriceList = () => {
   return (
     <main>
       <HelmetSeo
-        title="Price List - Nettax"
-        description="Welcome to the Price List of Nettax."
+        title="Tax on Salary in Pakistan – Pricing & Tax Services - Nettax"
+        description="Explore Nettax’s updated price list for salary tax filing, NTN registration & consultancy. Transparent tax rates & expert services for individuals & businesses."
       />
 
       <PageHero

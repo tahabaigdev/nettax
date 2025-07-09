@@ -9,7 +9,10 @@ import WhoCanJoinSection from "@/components/sections/WhoCanJoinSection";
 const NettaxDost = () => {
   return (
     <main>
-      <HelmetSeo title="" description="" />
+      <HelmetSeo
+        title="FBR Registration & Online NTN Check – Nettax Dost"
+        description="NetTax Dost helps you register with FBR and check your NTN online with ease. Fast, secure, and simplified tax solutions — trusted by thousands in Pakistan."
+      />
 
       <NettaxDostHero />
 
