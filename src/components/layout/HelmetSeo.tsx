@@ -17,6 +17,7 @@ const HelmetSeo: React.FC<HelmetSeoProps> = ({
   return (
     <Helmet>
       <title>{title}</title>
+      <meta name="description" content={description} />
 
       {/* OpenGraph */}
       <meta property="og:title" content={title} />
