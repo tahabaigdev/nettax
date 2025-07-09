@@ -277,7 +277,7 @@ const ProcessTimeline = forwardRef<HTMLDivElement>((_, ref) => {
               <div className="grid gap-[2rem] rounded-[1.6rem] border-[2px] border-white p-[1.6rem] md:gap-[4rem] md:p-[3.2rem]">
                 <div className="grid gap-[2rem] md:gap-[4rem]">
                   <h3 className="text-[2rem] leading-[2.4rem] font-medium text-(--base-color-01) md:text-[2.4rem] md:leading-[2.88rem]">
-                    Clear, objective guidance you can trust.
+                    Clear, objective guidance you can trust in tax services.
                   </h3>
 
                   <hr className="w-full border-1 border-[#e4e2e9]" />

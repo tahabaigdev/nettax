@@ -32,8 +32,8 @@ const About = () => {
   return (
     <main>
       <HelmetSeo
-        title="Why Choose Nettax | Trusted FBR Tax Consultants in Pakistan"
-        description="Nettax is Pakistan’s trusted FBR partner for NTN checks, tax returns & eFBR updates. Discover why thousands trust our expert tax consultants & services."
+        title="About Nettax – FBR Online Verification & Filer Check Experts"
+        description="Learn about Nettax, your trusted partner for FBR online verification filer status check, and tax consultancy in Pakistan. Experience reliable tax solutions."
       />
 
       <PageHero
