@@ -13,7 +13,7 @@ const PriceList = () => {
       <HelmetSeo
         title="Tax on Salary in Pakistan – Pricing & Tax Services - Nettax"
         description="Explore Nettax’s updated price list for salary tax filing, NTN registration & consultancy. Transparent tax rates & expert services for individuals & businesses."
-        url="https://www.nettax.org/price-list"
+        url="https://nettax.org/price-list"
       />
 
       <PageHero

@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
       <HelmetSeo
         title="Privacy Policy - nettax"
         description="Welcome to the Privacy Policy of nettax."
-        url="https://www.nettax.org/privacy-policy"
+        url="https://nettax.org/privacy-policy"
       />
 
       <div className="container flex flex-col gap-[2rem] rounded-[1.2rem] border border-[#cacaca] p-[2rem]">
