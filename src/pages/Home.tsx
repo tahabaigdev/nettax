@@ -33,8 +33,8 @@ const Home = () => {
   return (
     <main>
       <HelmetSeo
-        title=" NTN & FBR Verification Online | Tax Services – Nettax"
-        description="Need NTN registration or FBR verification in Pakistan? Nettax offers trusted online tax consultancy services to individuals and businesses."
+        title="Top Tax Consultant & Advisory Services – Nettax Pakistan"
+        description="Find expert tax consultants, expat tax advisors & advisory services in Pakistan. Check filer status, verify NTN & access FBR registration online via Nettax."
         url="https://nettax.org/"
       />
 

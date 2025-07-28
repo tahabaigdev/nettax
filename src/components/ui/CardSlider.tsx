@@ -73,7 +73,7 @@ const slideData = [
     title: "DNFPB Registration",
     text: "Designated Non-Financial Businesses and Professions (DNFBPs) refer to sectors such as real estate, legal, and accounting",
     link: "#",
-    color: "#289D72",
+    color: "#8DB6B8",
   },
   {
     icon: Building,
