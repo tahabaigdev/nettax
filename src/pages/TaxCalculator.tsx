@@ -55,8 +55,8 @@ const TaxCalculator = () => {
   return (
     <main>
       <HelmetSeo
-        title="Salary Tax Calculator | FBR NTN Verification Tool"
-        description="Use Nettax Dost to calculate your salary tax in Pakistan. Check FBR NTN, eFBR status & verify tax info easily. Fast, accurate & trusted by tax experts."
+        title="Salary Tax Calculator – Pakistan"
+        description="Instantly calculate your salary after tax in Pakistan. Our free salary tax calculator uses the latest income tax rules for accurate payroll planning."
         url="https://nettax.org/tax-calculator"
       />
 
@@ -70,15 +70,18 @@ const TaxCalculator = () => {
         <div className="container flex gap-[4rem]">
           <div className="w-[35%]">
             <h3 className="text-[4rem] leading-[4.8rem] font-light text-(--primary-color)">
-              Salary Tax{" "}
+              Salary Tax Calculator -
               <strong className="font-bold text-(--base-color-01)">
-                Calculator
+                Pakistan
               </strong>
             </h3>
 
             <p className="mt-[2rem] text-[2rem] leading-[3rem]">
-              Our salary tax calculator is constantly updated with the latest
-              regulations and tax rates in Pakistan.
+              Use our free salary tax calculator to quickly estimate your
+              monthly or annual take-home salary after tax in Pakistan.
+              Regularly updated with the latest income tax slabs and payroll
+              regulations, it ensures accurate, compliant, and up-to-date
+              results for employees, HR teams, and financial planners.
             </p>
           </div>
           <div className="w-[65%] rounded-[.8rem] border border-[#e9e2da] p-[2rem]">
