@@ -17,7 +17,7 @@ import { Label } from "@/components/ui/label";
 import { calculateYearlyTax } from "@/lib/taxUtils";
 
 const TaxCalculator = () => {
-  const [year, setYear] = useState("2024");
+  const [year, setYear] = useState("2025");
   const [monthlySalary, setMonthlySalary] = useState("");
   const [result, setResult] = useState({
     yearlySalary: 0,
@@ -66,13 +66,13 @@ const TaxCalculator = () => {
         subheading="Quickly calculate your tax liabilities and optimize savings with compliant, strategic insights."
       />
 
-      <div className="pt-[10rem] pb-[4rem] lg:py-[10rem]">
-        <div className="container flex gap-[4rem]">
-          <div className="w-[35%]">
-            <h3 className="text-[4rem] leading-[4.8rem] font-light text-(--primary-color)">
-              Salary Tax Calculator -
+      <div className="px-[2rem] pt-[10rem] pb-[4rem] lg:py-[10rem] xl:px-[0rem]">
+        <div className="container flex flex-col gap-[4rem] lg:flex-row">
+          <div className="lg:w-[35%]">
+            <h3 className="text-[3rem] leading-[3.5rem] font-light text-(--primary-color) md:text-[4rem] md:leading-[4.8rem]">
+              Salary Tax{" "}
               <strong className="font-bold text-(--base-color-01)">
-                Pakistan
+                Calculator
               </strong>
             </h3>
 
@@ -84,9 +84,10 @@ const TaxCalculator = () => {
               results for employees, HR teams, and financial planners.
             </p>
           </div>
-          <div className="w-[65%] rounded-[.8rem] border border-[#e9e2da] p-[2rem]">
-            <div className="flex gap-[2rem]">
-              <div className="grid w-full grid-cols-2 gap-[2rem]">
+
+          <div className="rounded-[.8rem] border border-[#e9e2da] p-[1rem] md:p-[2rem] lg:w-[65%]">
+            <div className="flex flex-col gap-[2rem] md:flex-row">
+              <div className="grid w-full grid-cols-1 gap-[2rem] md:grid-cols-2">
                 <Select onValueChange={(val) => setYear(val)}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select Year" />
@@ -115,10 +116,10 @@ const TaxCalculator = () => {
 
             <fieldset className="mt-[4rem] grid grid-cols-3">
               {/* Monthly Tax Result */}
-              <div className="flex flex-col border-r-[2px] border-(--base-color-01) p-[1rem]">
+              <div className="flex flex-col border-r-[2px] border-(--base-color-01) p-[.5rem] md:p-[1rem]">
                 <Label
                   htmlFor="monthly-salary"
-                  className="text-[1.6rem] leading-[2.4rem] font-light"
+                  className="text-[1.2rem] leading-[2rem] font-light md:text-[1.6rem] md:leading-[2.4rem]"
                 >
                   Monthly Salary
                 </Label>
@@ -127,15 +128,15 @@ const TaxCalculator = () => {
                   type="text"
                   name="monthly-salary"
                   readOnly
-                  className="border-0 p-0 text-[2.2rem] leading-[2.64rem] font-medium"
+                  className="border-0 p-0 text-[1.8rem] leading-[2rem] font-medium md:text-[2.2rem] md:leading-[2.64rem]"
                   value={monthlySalary}
                 />
               </div>
 
-              <div className="flex flex-col border-r-[2px] border-(--base-color-01) p-[1rem]">
+              <div className="flex flex-col border-r-[2px] border-(--base-color-01) p-[.5rem] md:p-[1rem]">
                 <Label
                   htmlFor="monthly-tax"
-                  className="text-[1.6rem] leading-[2.4rem] font-light"
+                  className="text-[1.2rem] leading-[2rem] font-light md:text-[1.6rem] md:leading-[2.4rem]"
                 >
                   Monthly Tax
                 </Label>
@@ -144,15 +145,15 @@ const TaxCalculator = () => {
                   type="text"
                   name="monthly-tax"
                   readOnly
-                  className="border-0 p-0 text-[2.2rem] leading-[2.64rem] font-medium"
+                  className="border-0 p-0 text-[1.8rem] leading-[2rem] font-medium md:text-[2.2rem] md:leading-[2.64rem]"
                   value={result.monthlyTax.toFixed(0)}
                 />
               </div>
 
-              <div className="flex flex-col p-[1rem]">
+              <div className="flex flex-col p-[.5rem] md:p-[1rem]">
                 <Label
                   htmlFor="salary-after-tax"
-                  className="text-[1.6rem] leading-[2.4rem] font-light"
+                  className="text-[1.2rem] leading-[2rem] font-light md:text-[1.6rem] md:leading-[2.4rem]"
                 >
                   Salary After Tax
                 </Label>
@@ -161,16 +162,16 @@ const TaxCalculator = () => {
                   type="text"
                   name="salary-after-tax"
                   readOnly
-                  className="border-0 p-0 text-[2.2rem] leading-[2.64rem] font-medium"
+                  className="border-0 p-0 text-[1.8rem] leading-[2rem] font-medium md:text-[2.2rem] md:leading-[2.64rem]"
                   value={result.monthlyAfterTax.toFixed(0)}
                 />
               </div>
 
               {/* Yearly Tax Result */}
-              <div className="flex flex-col border-t-[2px] border-r-[2px] border-(--base-color-01) p-[1rem]">
+              <div className="flex flex-col border-t-[2px] border-r-[2px] border-(--base-color-01) p-[.5rem] md:p-[1rem]">
                 <Label
                   htmlFor="yearly-salary"
-                  className="text-[1.6rem] leading-[2.4rem] font-light"
+                  className="text-[1.2rem] leading-[2rem] font-light md:text-[1.6rem] md:leading-[2.4rem]"
                 >
                   Yearly Salary
                 </Label>
@@ -179,15 +180,15 @@ const TaxCalculator = () => {
                   type="text"
                   name="yearly-salary"
                   readOnly
-                  className="border-0 p-0 text-[2.2rem] leading-[2.64rem] font-medium"
+                  className="border-0 p-0 text-[1.8rem] leading-[2rem] font-medium md:text-[2.2rem] md:leading-[2.64rem]"
                   value={result.yearlySalary.toFixed(0)}
                 />
               </div>
 
-              <div className="flex flex-col border-t-[2px] border-r-[2px] border-(--base-color-01) p-[1rem]">
+              <div className="flex flex-col border-t-[2px] border-r-[2px] border-(--base-color-01) p-[.5rem] md:p-[1rem]">
                 <Label
                   htmlFor="yearly-tax"
-                  className="text-[1.6rem] leading-[2.4rem] font-light"
+                  className="text-[1.2rem] leading-[2rem] font-light md:text-[1.6rem] md:leading-[2.4rem]"
                 >
                   Yearly Tax
                 </Label>
@@ -196,15 +197,15 @@ const TaxCalculator = () => {
                   type="text"
                   name="yearly-tax"
                   readOnly
-                  className="border-0 p-0 text-[2.2rem] leading-[2.64rem] font-medium"
+                  className="border-0 p-0 text-[1.8rem] leading-[2rem] font-medium md:text-[2.2rem] md:leading-[2.64rem]"
                   value={result.yearlyTax.toFixed(0)}
                 />
               </div>
 
-              <div className="flex flex-col border-t-[2px] border-(--base-color-01) p-[1rem]">
+              <div className="flex flex-col border-t-[2px] border-(--base-color-01) p-[.5rem] md:p-[1rem]">
                 <Label
                   htmlFor="salary-after-tax"
-                  className="text-[1.6rem] leading-[2.4rem] font-light"
+                  className="text-[1.2rem] leading-[2rem] font-light md:text-[1.6rem] md:leading-[2.4rem]"
                 >
                   Salary After Tax
                 </Label>
@@ -213,7 +214,7 @@ const TaxCalculator = () => {
                   type="text"
                   name="salary-after-tax"
                   readOnly
-                  className="border-0 p-0 text-[2.2rem] leading-[2.64rem] font-medium"
+                  className="border-0 p-0 text-[1.8rem] leading-[2rem] font-medium md:text-[2.2rem] md:leading-[2.64rem]"
                   value={result.yearlyAfterTax.toFixed(0)}
                 />
               </div>
