@@ -120,8 +120,6 @@ const Post = () => {
     };
   }, [isLoading]);
 
-  const frontendUrl = `${import.meta.env.VITE_SITE_URL}/blog/${slug}`;
-
   if (isLoading || !post) {
     return (
       <div className="fixed inset-0 z-[999] flex h-screen w-full items-center justify-center bg-[#ffffff]">
@@ -242,9 +240,7 @@ const Post = () => {
                 <h4 className="text-[2.8rem] leading-[3.6rem]">Share Post</h4>
 
                 <div>
-                  {/* <SocialShare title={post.title.rendered} url={post.link} /> */}
-
-                  <SocialShare title={post.title.rendered} url={frontendUrl} />
+                  <SocialShare title={post.title.rendered} url={post.link} />
                 </div>
               </div>
             </div>
