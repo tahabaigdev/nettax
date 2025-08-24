@@ -11,17 +11,7 @@ import axios from "axios";
 import clsx from "clsx";
 import { Button } from "./button";
 
-const countries = [
-  "United States",
-  "United Kingdom",
-  "Canada",
-  "Australia",
-  "India",
-  "Germany",
-  "France",
-  "Brazil",
-  "Japan",
-];
+const countries = ["Pakistan", "China", "Afghanistan", "Iran"];
 
 const SubscribeForm = () => {
   const [email, setEmail] = useState("");
